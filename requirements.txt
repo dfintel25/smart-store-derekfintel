@@ -211,3 +211,6 @@ pyspark
 
 #Module for creating word clouds. 
 wordcloud
+
+#Datascrubber module
+DataScrubber  # noqa: E402
