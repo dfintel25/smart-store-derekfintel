@@ -51,7 +51,6 @@ def read_raw_data(file_name: str) -> pd.DataFrame:
     
     # TODO: OPTIONAL Add data profiling here to understand the dataset
     # Suggestion: Log the datatypes of each column and the number of unique values
-    # Example:
     logger.info(f"Column datatypes: \n{df.dtypes}")
     logger.info(f"Number of unique values: \n{df.nunique()}")
     
@@ -86,8 +85,8 @@ def remove_duplicates(df: pd.DataFrame) -> pd.DataFrame:
     # TODO: Consider which columns should be used to identify duplicates
     # Example: For products, SKU or product code is typically unique
     # So we could do something like this:
-    # df = df.drop_duplicates(subset=['product_code'])
-    df = df.drop_duplicates()
+    df = df.drop_duplicates(subset=['productid'])
+    df = df.drop_duplicates(subset=['productid'])
     
     removed_count = initial_count - len(df)
     logger.info(f"Removed {removed_count} duplicate rows")

@@ -795,3 +795,524 @@ dtype: int64
 2025-03-25 21:38:26.124 | INFO     | __main__:main:251 - ==================================
 2025-03-25 21:38:26.124 | INFO     | __main__:main:252 - FINISHED prepare_sales_data.py
 2025-03-25 21:38:26.124 | INFO     | __main__:main:253 - ==================================
+2025-03-25 21:40:58.039 | INFO     | __main__:main:142 - ==================================
+2025-03-25 21:40:58.039 | INFO     | __main__:main:143 - STARTING prepare_customers_data.py
+2025-03-25 21:40:58.039 | INFO     | __main__:main:144 - ==================================
+2025-03-25 21:40:58.040 | INFO     | __main__:main:146 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:40:58.040 | INFO     | __main__:main:147 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:40:58.040 | INFO     | __main__:main:148 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:40:58.040 | INFO     | __main__:main:149 - scripts folder: C:\Projects\smart-store-derekfintel\scripts
+2025-03-25 21:40:58.040 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=customers_data.csv
+2025-03-25 21:40:58.040 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\customers_data.csv
+2025-03-25 21:40:58.042 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 11 rows and 6 columns
+2025-03-25 21:40:58.042 | INFO     | __main__:main:158 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, LoyaltyPoints, Demographic
+2025-03-25 21:40:58.042 | INFO     | __main__:main:159 - Initial dataframe shape: (11, 6)
+2025-03-25 21:40:58.043 | INFO     | __main__:remove_duplicates:78 - FUNCTION START: remove_duplicates with dataframe shape=(11, 6)
+2025-03-25 21:40:58.044 | INFO     | __main__:remove_duplicates:82 - Removed 0 duplicate rows
+2025-03-25 21:40:58.044 | INFO     | __main__:remove_duplicates:83 - 11 records remaining after removing duplicates.
+2025-03-25 21:40:58.044 | INFO     | __main__:handle_missing_values:97 - FUNCTION START: handle_missing_values with dataframe shape=(11, 6)
+2025-03-25 21:40:58.044 | INFO     | __main__:handle_missing_values:101 - Total missing values before handling: 0
+2025-03-25 21:40:58.049 | INFO     | __main__:handle_missing_values:110 - Total missing values after handling: 0
+2025-03-25 21:40:58.049 | INFO     | __main__:handle_missing_values:111 - 11 records remaining after handling missing values.
+2025-03-25 21:40:58.050 | INFO     | __main__:remove_outliers:125 - FUNCTION START: remove_outliers with dataframe shape=(11, 6)
+2025-03-25 21:40:58.050 | INFO     | __main__:remove_outliers:133 - Removed 0 outlier rows
+2025-03-25 21:40:58.050 | INFO     | __main__:remove_outliers:134 - 11 records remaining after removing outliers.
+2025-03-25 21:40:58.050 | INFO     | __main__:save_prepared_data:61 - FUNCTION START: save_prepared_data with file_name=customers_data_prepared.csv, dataframe shape=(11, 6)
+2025-03-25 21:40:58.052 | INFO     | __main__:save_prepared_data:64 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\customers_data_prepared.csv
+2025-03-25 21:40:58.052 | INFO     | __main__:main:182 - ==================================
+2025-03-25 21:40:58.052 | INFO     | __main__:main:183 - FINISHED prepare_customers_data.py
+2025-03-25 21:40:58.052 | INFO     | __main__:main:184 - ==================================
+2025-03-25 21:42:15.985 | INFO     | __main__:main:142 - ==================================
+2025-03-25 21:42:15.985 | INFO     | __main__:main:143 - STARTING prepare_customers_data.py
+2025-03-25 21:42:15.985 | INFO     | __main__:main:144 - ==================================
+2025-03-25 21:42:15.985 | INFO     | __main__:main:146 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:42:15.986 | INFO     | __main__:main:147 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:42:15.986 | INFO     | __main__:main:148 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:42:15.986 | INFO     | __main__:main:149 - scripts folder: C:\Projects\smart-store-derekfintel\scripts
+2025-03-25 21:42:15.986 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=customers_data.csv
+2025-03-25 21:42:15.986 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\customers_data.csv
+2025-03-25 21:42:15.988 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 11 rows and 6 columns
+2025-03-25 21:42:15.988 | INFO     | __main__:main:158 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, LoyaltyPoints, Demographic
+2025-03-25 21:42:15.988 | INFO     | __main__:main:159 - Initial dataframe shape: (11, 6)
+2025-03-25 21:42:15.988 | INFO     | __main__:remove_duplicates:78 - FUNCTION START: remove_duplicates with dataframe shape=(11, 6)
+2025-03-25 21:42:15.989 | INFO     | __main__:remove_duplicates:82 - Removed 0 duplicate rows
+2025-03-25 21:42:15.989 | INFO     | __main__:remove_duplicates:83 - 11 records remaining after removing duplicates.
+2025-03-25 21:42:15.989 | INFO     | __main__:handle_missing_values:97 - FUNCTION START: handle_missing_values with dataframe shape=(11, 6)
+2025-03-25 21:42:15.990 | INFO     | __main__:handle_missing_values:101 - Total missing values before handling: 0
+2025-03-25 21:42:15.991 | INFO     | __main__:handle_missing_values:110 - Total missing values after handling: 0
+2025-03-25 21:42:15.992 | INFO     | __main__:handle_missing_values:111 - 11 records remaining after handling missing values.
+2025-03-25 21:42:15.992 | INFO     | __main__:remove_outliers:125 - FUNCTION START: remove_outliers with dataframe shape=(11, 6)
+2025-03-25 21:42:15.992 | INFO     | __main__:remove_outliers:133 - Removed 0 outlier rows
+2025-03-25 21:42:15.992 | INFO     | __main__:remove_outliers:134 - 11 records remaining after removing outliers.
+2025-03-25 21:42:15.993 | INFO     | __main__:save_prepared_data:61 - FUNCTION START: save_prepared_data with file_name=customers_data_prepared.csv, dataframe shape=(11, 6)
+2025-03-25 21:42:15.994 | INFO     | __main__:save_prepared_data:64 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\customers_data_prepared.csv
+2025-03-25 21:42:15.994 | INFO     | __main__:main:182 - ==================================
+2025-03-25 21:42:15.994 | INFO     | __main__:main:183 - FINISHED prepare_customers_data.py
+2025-03-25 21:42:15.994 | INFO     | __main__:main:184 - ==================================
+2025-03-25 21:43:04.147 | INFO     | __main__:main:140 - ==================================
+2025-03-25 21:43:04.147 | INFO     | __main__:main:141 - STARTING prepare_customers_data.py
+2025-03-25 21:43:04.147 | INFO     | __main__:main:142 - ==================================
+2025-03-25 21:43:04.148 | INFO     | __main__:main:144 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:43:04.148 | INFO     | __main__:main:145 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:43:04.148 | INFO     | __main__:main:146 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:43:04.148 | INFO     | __main__:main:147 - scripts folder: C:\Projects\smart-store-derekfintel\scripts
+2025-03-25 21:43:04.148 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=customers_data.csv
+2025-03-25 21:43:04.148 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\customers_data.csv
+2025-03-25 21:43:04.150 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 11 rows and 6 columns
+2025-03-25 21:43:04.151 | INFO     | __main__:main:156 - Initial dataframe columns: CustomerID, Name, Region, JoinDate, LoyaltyPoints, Demographic
+2025-03-25 21:43:04.151 | INFO     | __main__:main:157 - Initial dataframe shape: (11, 6)
+2025-03-25 21:43:04.151 | INFO     | __main__:remove_duplicates:78 - FUNCTION START: remove_duplicates with dataframe shape=(11, 6)
+2025-03-25 21:43:04.152 | INFO     | __main__:remove_duplicates:82 - Removed 0 duplicate rows
+2025-03-25 21:43:04.152 | INFO     | __main__:remove_duplicates:83 - 11 records remaining after removing duplicates.
+2025-03-25 21:43:04.153 | INFO     | __main__:handle_missing_values:97 - FUNCTION START: handle_missing_values with dataframe shape=(11, 6)
+2025-03-25 21:43:04.153 | INFO     | __main__:handle_missing_values:101 - Total missing values before handling: 0
+2025-03-25 21:43:04.155 | INFO     | __main__:handle_missing_values:109 - Total missing values after handling: 0
+2025-03-25 21:43:04.156 | INFO     | __main__:handle_missing_values:110 - 11 records remaining after handling missing values.
+2025-03-25 21:43:04.156 | INFO     | __main__:remove_outliers:124 - FUNCTION START: remove_outliers with dataframe shape=(11, 6)
+2025-03-25 21:43:04.156 | INFO     | __main__:remove_outliers:131 - Removed 0 outlier rows
+2025-03-25 21:43:04.157 | INFO     | __main__:remove_outliers:132 - 11 records remaining after removing outliers.
+2025-03-25 21:43:04.157 | INFO     | __main__:save_prepared_data:61 - FUNCTION START: save_prepared_data with file_name=customers_data_prepared.csv, dataframe shape=(11, 6)
+2025-03-25 21:43:04.159 | INFO     | __main__:save_prepared_data:64 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\customers_data_prepared.csv
+2025-03-25 21:43:04.159 | INFO     | __main__:main:180 - ==================================
+2025-03-25 21:43:04.160 | INFO     | __main__:main:181 - FINISHED prepare_customers_data.py
+2025-03-25 21:43:04.161 | INFO     | __main__:main:182 - ==================================
+2025-03-25 21:43:17.902 | INFO     | __main__:main:214 - ==================================
+2025-03-25 21:43:17.903 | INFO     | __main__:main:215 - STARTING prepare_products_data.py
+2025-03-25 21:43:17.903 | INFO     | __main__:main:216 - ==================================
+2025-03-25 21:43:17.903 | INFO     | __main__:main:218 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:43:17.903 | INFO     | __main__:main:219 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:43:17.904 | INFO     | __main__:main:220 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:43:17.904 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:43:17.904 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:43:17.906 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:43:17.907 | INFO     | __main__:read_raw_data:55 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:43:17.908 | INFO     | __main__:read_raw_data:56 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:43:17.908 | INFO     | __main__:main:229 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:43:17.908 | INFO     | __main__:main:230 - Initial dataframe shape: (8, 6)
+2025-03-25 21:43:17.909 | INFO     | __main__:main:239 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:43:17.910 | INFO     | __main__:remove_duplicates:83 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:43:17.912 | INFO     | __main__:remove_duplicates:93 - Removed 0 duplicate rows
+2025-03-25 21:43:17.912 | INFO     | __main__:remove_duplicates:94 - 8 records remaining after removing duplicates.
+2025-03-25 21:43:17.912 | INFO     | __main__:handle_missing_values:108 - FUNCTION START: handle_missing_values with dataframe shape=(8, 6)
+2025-03-25 21:43:17.913 | INFO     | __main__:handle_missing_values:113 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:43:17.914 | INFO     | __main__:handle_missing_values:127 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:43:17.914 | INFO     | __main__:handle_missing_values:128 - 8 records remaining after handling missing values.
+2025-03-25 21:43:17.914 | INFO     | __main__:standardize_formats:175 - FUNCTION START: standardize_formats with dataframe shape=(8, 6)
+2025-03-25 21:43:17.914 | INFO     | __main__:standardize_formats:185 - Completed standardizing formats
+2025-03-25 21:43:17.914 | INFO     | __main__:remove_outliers:142 - FUNCTION START: remove_outliers with dataframe shape=(8, 6)
+2025-03-25 21:43:17.915 | INFO     | __main__:remove_outliers:161 - Removed 0 outlier rows
+2025-03-25 21:43:17.915 | INFO     | __main__:remove_outliers:162 - 8 records remaining after removing outliers.
+2025-03-25 21:43:17.915 | INFO     | __main__:validate_data:198 - FUNCTION START: validate_data with dataframe shape=(8, 6)
+2025-03-25 21:43:17.915 | INFO     | __main__:validate_data:207 - Data validation complete
+2025-03-25 21:43:17.915 | INFO     | __main__:save_prepared_data:68 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(8, 6)
+2025-03-25 21:43:17.917 | INFO     | __main__:save_prepared_data:71 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\products_data_prepared.csv
+2025-03-25 21:43:17.917 | INFO     | __main__:main:251 - ==================================
+2025-03-25 21:43:17.917 | INFO     | __main__:main:252 - FINISHED prepare_products_data.py
+2025-03-25 21:43:17.918 | INFO     | __main__:main:253 - ==================================
+2025-03-25 21:45:34.703 | INFO     | __main__:main:213 - ==================================
+2025-03-25 21:45:34.704 | INFO     | __main__:main:214 - STARTING prepare_products_data.py
+2025-03-25 21:45:34.704 | INFO     | __main__:main:215 - ==================================
+2025-03-25 21:45:34.704 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:45:34.704 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:45:34.704 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:45:34.704 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:45:34.705 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:45:34.707 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:45:34.707 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:45:34.708 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:45:34.708 | INFO     | __main__:main:228 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:45:34.709 | INFO     | __main__:main:229 - Initial dataframe shape: (8, 6)
+2025-03-25 21:45:34.710 | INFO     | __main__:main:238 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:45:34.710 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:49:22.516 | INFO     | __main__:main:213 - ==================================
+2025-03-25 21:49:22.517 | INFO     | __main__:main:214 - STARTING prepare_products_data.py
+2025-03-25 21:49:22.517 | INFO     | __main__:main:215 - ==================================
+2025-03-25 21:49:22.517 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:49:22.518 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:49:22.519 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:49:22.519 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:49:22.519 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:49:22.522 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:49:22.523 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:49:22.524 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:49:22.525 | INFO     | __main__:main:228 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:49:22.525 | INFO     | __main__:main:229 - Initial dataframe shape: (8, 6)
+2025-03-25 21:49:22.525 | INFO     | __main__:main:238 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:49:22.526 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:50:46.428 | INFO     | __main__:main:213 - ==================================
+2025-03-25 21:50:46.428 | INFO     | __main__:main:214 - STARTING prepare_products_data.py
+2025-03-25 21:50:46.428 | INFO     | __main__:main:215 - ==================================
+2025-03-25 21:50:46.428 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:50:46.429 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:50:46.429 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:50:46.429 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:50:46.429 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:50:46.431 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:50:46.431 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:50:46.432 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:50:46.433 | INFO     | __main__:main:228 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:50:46.433 | INFO     | __main__:main:229 - Initial dataframe shape: (8, 6)
+2025-03-25 21:50:46.433 | INFO     | __main__:main:238 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:50:46.434 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:50:46.435 | INFO     | __main__:remove_duplicates:92 - Removed 0 duplicate rows
+2025-03-25 21:50:46.435 | INFO     | __main__:remove_duplicates:93 - 8 records remaining after removing duplicates.
+2025-03-25 21:50:46.435 | INFO     | __main__:handle_missing_values:107 - FUNCTION START: handle_missing_values with dataframe shape=(8, 6)
+2025-03-25 21:50:46.437 | INFO     | __main__:handle_missing_values:112 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:50:46.439 | INFO     | __main__:handle_missing_values:126 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:50:46.440 | INFO     | __main__:handle_missing_values:127 - 8 records remaining after handling missing values.
+2025-03-25 21:50:46.440 | INFO     | __main__:standardize_formats:174 - FUNCTION START: standardize_formats with dataframe shape=(8, 6)
+2025-03-25 21:50:46.440 | INFO     | __main__:standardize_formats:184 - Completed standardizing formats
+2025-03-25 21:50:46.441 | INFO     | __main__:remove_outliers:141 - FUNCTION START: remove_outliers with dataframe shape=(8, 6)
+2025-03-25 21:50:46.441 | INFO     | __main__:remove_outliers:160 - Removed 0 outlier rows
+2025-03-25 21:50:46.441 | INFO     | __main__:remove_outliers:161 - 8 records remaining after removing outliers.
+2025-03-25 21:50:46.441 | INFO     | __main__:validate_data:197 - FUNCTION START: validate_data with dataframe shape=(8, 6)
+2025-03-25 21:50:46.441 | INFO     | __main__:validate_data:206 - Data validation complete
+2025-03-25 21:50:46.441 | INFO     | __main__:save_prepared_data:67 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(8, 6)
+2025-03-25 21:50:46.443 | INFO     | __main__:save_prepared_data:70 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\products_data_prepared.csv
+2025-03-25 21:50:46.443 | INFO     | __main__:main:250 - ==================================
+2025-03-25 21:50:46.443 | INFO     | __main__:main:251 - FINISHED prepare_products_data.py
+2025-03-25 21:50:46.445 | INFO     | __main__:main:252 - ==================================
+2025-03-25 21:55:24.861 | INFO     | __main__:main:212 - ==================================
+2025-03-25 21:55:24.862 | INFO     | __main__:main:213 - STARTING prepare_products_data.py
+2025-03-25 21:55:24.862 | INFO     | __main__:main:214 - ==================================
+2025-03-25 21:55:24.862 | INFO     | __main__:main:216 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:55:24.862 | INFO     | __main__:main:217 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:55:24.863 | INFO     | __main__:main:218 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:55:24.863 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:55:24.863 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:55:24.865 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:55:24.866 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:55:24.867 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:55:24.867 | INFO     | __main__:main:227 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:55:24.867 | INFO     | __main__:main:228 - Initial dataframe shape: (8, 6)
+2025-03-25 21:55:24.868 | INFO     | __main__:main:237 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:55:24.868 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:55:24.869 | INFO     | __main__:remove_duplicates:91 - Removed 0 duplicate rows
+2025-03-25 21:55:24.869 | INFO     | __main__:remove_duplicates:92 - 8 records remaining after removing duplicates.
+2025-03-25 21:55:24.869 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(8, 6)
+2025-03-25 21:55:24.870 | INFO     | __main__:handle_missing_values:111 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:55:24.871 | INFO     | __main__:handle_missing_values:125 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:55:24.871 | INFO     | __main__:handle_missing_values:126 - 8 records remaining after handling missing values.
+2025-03-25 21:55:24.872 | INFO     | __main__:standardize_formats:173 - FUNCTION START: standardize_formats with dataframe shape=(8, 6)
+2025-03-25 21:55:24.872 | INFO     | __main__:standardize_formats:183 - Completed standardizing formats
+2025-03-25 21:55:24.872 | INFO     | __main__:remove_outliers:140 - FUNCTION START: remove_outliers with dataframe shape=(8, 6)
+2025-03-25 21:55:24.872 | INFO     | __main__:remove_outliers:159 - Removed 0 outlier rows
+2025-03-25 21:55:24.873 | INFO     | __main__:remove_outliers:160 - 8 records remaining after removing outliers.
+2025-03-25 21:55:24.873 | INFO     | __main__:validate_data:196 - FUNCTION START: validate_data with dataframe shape=(8, 6)
+2025-03-25 21:56:18.175 | INFO     | __main__:main:212 - ==================================
+2025-03-25 21:56:18.175 | INFO     | __main__:main:213 - STARTING prepare_products_data.py
+2025-03-25 21:56:18.176 | INFO     | __main__:main:214 - ==================================
+2025-03-25 21:56:18.176 | INFO     | __main__:main:216 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:56:18.176 | INFO     | __main__:main:217 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:56:18.176 | INFO     | __main__:main:218 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:56:18.176 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=products_data.csv
+2025-03-25 21:56:18.177 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv
+2025-03-25 21:56:18.179 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 8 rows and 6 columns
+2025-03-25 21:56:18.179 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+ProductID          int64
+ProductName       object
+Category          object
+UnitPrice        float64
+StockQuantity      int64
+StoreSection      object
+dtype: object
+2025-03-25 21:56:18.180 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+ProductID        8
+ProductName      8
+Category         3
+UnitPrice        8
+StockQuantity    7
+StoreSection     3
+dtype: int64
+2025-03-25 21:56:18.181 | INFO     | __main__:main:227 - Initial dataframe columns: ProductID, ProductName, Category, UnitPrice, StockQuantity, StoreSection
+2025-03-25 21:56:18.181 | INFO     | __main__:main:228 - Initial dataframe shape: (8, 6)
+2025-03-25 21:56:18.182 | INFO     | __main__:main:237 - Cleaned column names: ProductID -> productid, ProductName -> productname, Category -> category, UnitPrice -> unitprice, StockQuantity -> stockquantity, StoreSection -> storesection
+2025-03-25 21:56:18.182 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(8, 6)
+2025-03-25 21:56:18.183 | INFO     | __main__:remove_duplicates:91 - Removed 0 duplicate rows
+2025-03-25 21:56:18.184 | INFO     | __main__:remove_duplicates:92 - 8 records remaining after removing duplicates.
+2025-03-25 21:56:18.184 | INFO     | __main__:handle_missing_values:106 - FUNCTION START: handle_missing_values with dataframe shape=(8, 6)
+2025-03-25 21:56:18.185 | INFO     | __main__:handle_missing_values:111 - Missing values by column before handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:56:18.185 | INFO     | __main__:handle_missing_values:125 - Missing values by column after handling:
+productid        0
+productname      0
+category         0
+unitprice        0
+stockquantity    0
+storesection     0
+dtype: int64
+2025-03-25 21:56:18.186 | INFO     | __main__:handle_missing_values:126 - 8 records remaining after handling missing values.
+2025-03-25 21:56:18.186 | INFO     | __main__:standardize_formats:173 - FUNCTION START: standardize_formats with dataframe shape=(8, 6)
+2025-03-25 21:56:18.186 | INFO     | __main__:standardize_formats:183 - Completed standardizing formats
+2025-03-25 21:56:18.186 | INFO     | __main__:remove_outliers:140 - FUNCTION START: remove_outliers with dataframe shape=(8, 6)
+2025-03-25 21:56:18.187 | INFO     | __main__:remove_outliers:159 - Removed 0 outlier rows
+2025-03-25 21:56:18.187 | INFO     | __main__:remove_outliers:160 - 8 records remaining after removing outliers.
+2025-03-25 21:56:18.188 | INFO     | __main__:validate_data:196 - FUNCTION START: validate_data with dataframe shape=(8, 6)
+2025-03-25 21:56:18.191 | INFO     | __main__:validate_data:202 - Found 0 products with negative prices
+2025-03-25 21:56:18.191 | INFO     | __main__:validate_data:205 - Data validation complete
+2025-03-25 21:56:18.191 | INFO     | __main__:save_prepared_data:67 - FUNCTION START: save_prepared_data with file_name=products_data_prepared.csv, dataframe shape=(8, 6)
+2025-03-25 21:56:18.193 | INFO     | __main__:save_prepared_data:70 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\products_data_prepared.csv
+2025-03-25 21:56:18.193 | INFO     | __main__:main:249 - ==================================
+2025-03-25 21:56:18.193 | INFO     | __main__:main:250 - FINISHED prepare_products_data.py
+2025-03-25 21:56:18.193 | INFO     | __main__:main:251 - ==================================
+2025-03-25 22:02:19.542 | INFO     | __main__:main:213 - ==================================
+2025-03-25 22:02:19.542 | INFO     | __main__:main:214 - STARTING prepare_sales_data.py
+2025-03-25 22:02:19.542 | INFO     | __main__:main:215 - ==================================
+2025-03-25 22:02:19.542 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 22:02:19.543 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 22:02:19.543 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 22:02:19.543 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-03-25 22:02:19.543 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv
+2025-03-25 22:02:19.545 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 94 rows and 9 columns
+2025-03-25 22:02:19.546 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+TransactionID        int64
+SaleDate            object
+CustomerID           int64
+ProductID            int64
+StoreID              int64
+CampaignID           int64
+SaleAmount         float64
+DiscountPercent      int64
+PaymentType         object
+dtype: object
+2025-03-25 22:02:19.547 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+TransactionID      94
+SaleDate           44
+CustomerID         11
+ProductID           8
+StoreID             6
+CampaignID          4
+SaleAmount         59
+DiscountPercent     5
+PaymentType         2
+dtype: int64
+2025-03-25 22:02:19.547 | INFO     | __main__:main:228 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, DiscountPercent, PaymentType
+2025-03-25 22:02:19.548 | INFO     | __main__:main:229 - Initial dataframe shape: (94, 9)
+2025-03-25 22:02:19.548 | INFO     | __main__:main:238 - Cleaned column names: TransactionID -> transactionid, SaleDate -> saledate, CustomerID -> customerid, ProductID -> productid, StoreID -> storeid, CampaignID -> campaignid, SaleAmount -> saleamount, DiscountPercent -> discountpercent, PaymentType -> paymenttype
+2025-03-25 22:02:19.548 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(94, 9)
+2025-03-25 22:03:26.544 | INFO     | __main__:main:213 - ==================================
+2025-03-25 22:03:26.544 | INFO     | __main__:main:214 - STARTING prepare_sales_data.py
+2025-03-25 22:03:26.544 | INFO     | __main__:main:215 - ==================================
+2025-03-25 22:03:26.544 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 22:03:26.545 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 22:03:26.545 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 22:03:26.545 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-03-25 22:03:26.545 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv
+2025-03-25 22:03:26.547 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 94 rows and 9 columns
+2025-03-25 22:03:26.547 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+TransactionID        int64
+SaleDate            object
+CustomerID           int64
+ProductID            int64
+StoreID              int64
+CampaignID           int64
+SaleAmount         float64
+DiscountPercent      int64
+PaymentType         object
+dtype: object
+2025-03-25 22:03:26.548 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+TransactionID      94
+SaleDate           44
+CustomerID         11
+ProductID           8
+StoreID             6
+CampaignID          4
+SaleAmount         59
+DiscountPercent     5
+PaymentType         2
+dtype: int64
+2025-03-25 22:03:26.549 | INFO     | __main__:main:228 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, DiscountPercent, PaymentType
+2025-03-25 22:03:26.549 | INFO     | __main__:main:229 - Initial dataframe shape: (94, 9)
+2025-03-25 22:03:26.549 | INFO     | __main__:main:238 - Cleaned column names: TransactionID -> transactionid, SaleDate -> saledate, CustomerID -> customerid, ProductID -> productid, StoreID -> storeid, CampaignID -> campaignid, SaleAmount -> saleamount, DiscountPercent -> discountpercent, PaymentType -> paymenttype
+2025-03-25 22:03:26.550 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(94, 9)
+2025-03-25 22:04:11.392 | INFO     | __main__:main:213 - ==================================
+2025-03-25 22:04:11.392 | INFO     | __main__:main:214 - STARTING prepare_sales_data.py
+2025-03-25 22:04:11.392 | INFO     | __main__:main:215 - ==================================
+2025-03-25 22:04:11.393 | INFO     | __main__:main:217 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 22:04:11.393 | INFO     | __main__:main:218 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 22:04:11.393 | INFO     | __main__:main:219 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 22:04:11.393 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-03-25 22:04:11.393 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv
+2025-03-25 22:04:11.395 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 94 rows and 9 columns
+2025-03-25 22:04:11.396 | INFO     | __main__:read_raw_data:54 - Column datatypes: 
+TransactionID        int64
+SaleDate            object
+CustomerID           int64
+ProductID            int64
+StoreID              int64
+CampaignID           int64
+SaleAmount         float64
+DiscountPercent      int64
+PaymentType         object
+dtype: object
+2025-03-25 22:04:11.397 | INFO     | __main__:read_raw_data:55 - Number of unique values: 
+TransactionID      94
+SaleDate           44
+CustomerID         11
+ProductID           8
+StoreID             6
+CampaignID          4
+SaleAmount         59
+DiscountPercent     5
+PaymentType         2
+dtype: int64
+2025-03-25 22:04:11.397 | INFO     | __main__:main:228 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, DiscountPercent, PaymentType
+2025-03-25 22:04:11.397 | INFO     | __main__:main:229 - Initial dataframe shape: (94, 9)
+2025-03-25 22:04:11.398 | INFO     | __main__:main:238 - Cleaned column names: TransactionID -> transactionid, SaleDate -> saledate, CustomerID -> customerid, ProductID -> productid, StoreID -> storeid, CampaignID -> campaignid, SaleAmount -> saleamount, DiscountPercent -> discountpercent, PaymentType -> paymenttype
+2025-03-25 22:04:11.399 | INFO     | __main__:remove_duplicates:82 - FUNCTION START: remove_duplicates with dataframe shape=(94, 9)
+2025-03-25 22:04:11.402 | INFO     | __main__:remove_duplicates:92 - Removed 86 duplicate rows
+2025-03-25 22:04:11.402 | INFO     | __main__:remove_duplicates:93 - 8 records remaining after removing duplicates.
+2025-03-25 22:04:11.403 | INFO     | __main__:handle_missing_values:107 - FUNCTION START: handle_missing_values with dataframe shape=(8, 9)
+2025-03-25 22:04:11.404 | INFO     | __main__:handle_missing_values:112 - Missing values by column before handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 22:04:11.405 | INFO     | __main__:handle_missing_values:126 - Missing values by column after handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 22:04:11.406 | INFO     | __main__:handle_missing_values:127 - 8 records remaining after handling missing values.
+2025-03-25 22:04:11.406 | INFO     | __main__:standardize_formats:174 - FUNCTION START: standardize_formats with dataframe shape=(8, 9)
+2025-03-25 22:04:11.406 | INFO     | __main__:standardize_formats:184 - Completed standardizing formats
+2025-03-25 22:04:11.406 | INFO     | __main__:remove_outliers:141 - FUNCTION START: remove_outliers with dataframe shape=(8, 9)
+2025-03-25 22:04:11.406 | INFO     | __main__:remove_outliers:160 - Removed 0 outlier rows
+2025-03-25 22:04:11.407 | INFO     | __main__:remove_outliers:161 - 8 records remaining after removing outliers.
+2025-03-25 22:04:11.407 | INFO     | __main__:validate_data:197 - FUNCTION START: validate_data with dataframe shape=(8, 9)
+2025-03-25 22:04:11.407 | INFO     | __main__:validate_data:206 - Data validation complete
+2025-03-25 22:04:11.407 | INFO     | __main__:save_prepared_data:67 - FUNCTION START: save_prepared_data with file_name=sales_data_prepared.csv, dataframe shape=(8, 9)
+2025-03-25 22:04:11.409 | INFO     | __main__:save_prepared_data:70 - Data saved to C:\Projects\smart-store-derekfintel\data\prepared\sales_data_prepared.csv
+2025-03-25 22:04:11.409 | INFO     | __main__:main:250 - ==================================
+2025-03-25 22:04:11.410 | INFO     | __main__:main:251 - FINISHED prepare_sales_data.py
+2025-03-25 22:04:11.410 | INFO     | __main__:main:252 - ==================================

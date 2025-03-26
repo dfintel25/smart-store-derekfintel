@@ -101,9 +101,8 @@ def handle_missing_values(df: pd.DataFrame) -> pd.DataFrame:
     logger.info(f"Total missing values before handling: {missing_before}")
     
     # TODO: Fill or drop missing values based on business rules
-    # Example:
-    # df['CustomerName'].fillna('Unknown', inplace=True)
-    # df.dropna(subset=['CustomerID'], inplace=True)
+    df['Name'].fillna('Unknown', inplace=True)
+    df.dropna(subset=['CustomerID'], inplace=True)
     
     # Log missing values count after handling
     missing_after = df.isna().sum().sum()
@@ -126,8 +125,7 @@ def remove_outliers(df: pd.DataFrame) -> pd.DataFrame:
     initial_count = len(df)
     
     # TODO: Define numeric columns and apply rules for outlier removal
-    # Example:
-    # df = df[(df['Age'] > 18) & (df['Age'] < 100)]
+    df = df[(df['LoyaltyPoints'] > 0) & (df['LoyaltyPoints'] < 300)]
     
     removed_count = initial_count - len(df)
     logger.info(f"Removed {removed_count} outlier rows")
