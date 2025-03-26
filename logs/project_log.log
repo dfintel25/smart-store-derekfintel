@@ -303,3 +303,137 @@ dtype: int64
 2025-03-25 19:58:10.740 | INFO     | __main__:main:237 - ==================================
 2025-03-25 19:58:10.741 | INFO     | __main__:main:238 - FINISHED prepare_sales_data.py
 2025-03-25 19:58:10.741 | INFO     | __main__:main:239 - ==================================
+2025-03-25 21:02:56.827 | INFO     | __main__:main:214 - ==================================
+2025-03-25 21:02:56.828 | INFO     | __main__:main:215 - STARTING prepare_sales_data.py
+2025-03-25 21:02:56.828 | INFO     | __main__:main:216 - ==================================
+2025-03-25 21:02:56.828 | INFO     | __main__:main:218 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:02:56.828 | INFO     | __main__:main:219 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:02:56.828 | INFO     | __main__:main:220 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:02:56.828 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-03-25 21:02:56.828 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv
+2025-03-25 21:02:56.830 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 94 rows and 9 columns
+2025-03-25 21:02:56.832 | INFO     | __main__:read_raw_data:55 - Column datatypes: 
+TransactionID        int64
+SaleDate            object
+CustomerID           int64
+ProductID            int64
+StoreID              int64
+CampaignID           int64
+SaleAmount         float64
+DiscountPercent      int64
+PaymentType         object
+dtype: object
+2025-03-25 21:02:56.833 | INFO     | __main__:read_raw_data:56 - Number of unique values: 
+TransactionID      94
+SaleDate           44
+CustomerID         11
+ProductID           8
+StoreID             6
+CampaignID          4
+SaleAmount         59
+DiscountPercent     5
+PaymentType         2
+dtype: int64
+2025-03-25 21:02:56.833 | INFO     | __main__:main:229 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, DiscountPercent, PaymentType
+2025-03-25 21:02:56.834 | INFO     | __main__:main:230 - Initial dataframe shape: (94, 9)
+2025-03-25 21:02:56.834 | INFO     | __main__:main:239 - Cleaned column names: TransactionID -> transactionid, SaleDate -> saledate, CustomerID -> customerid, ProductID -> productid, StoreID -> storeid, CampaignID -> campaignid, SaleAmount -> saleamount, DiscountPercent -> discountpercent, PaymentType -> paymenttype
+2025-03-25 21:02:56.834 | INFO     | __main__:remove_duplicates:83 - FUNCTION START: remove_duplicates with dataframe shape=(94, 9)
+2025-03-25 21:02:56.835 | INFO     | __main__:remove_duplicates:93 - Removed 0 duplicate rows
+2025-03-25 21:02:56.835 | INFO     | __main__:remove_duplicates:94 - 94 records remaining after removing duplicates.
+2025-03-25 21:02:56.836 | INFO     | __main__:handle_missing_values:108 - FUNCTION START: handle_missing_values with dataframe shape=(94, 9)
+2025-03-25 21:02:56.836 | INFO     | __main__:handle_missing_values:113 - Missing values by column before handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 21:02:56.837 | INFO     | __main__:handle_missing_values:127 - Missing values by column after handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 21:02:56.838 | INFO     | __main__:handle_missing_values:128 - 94 records remaining after handling missing values.
+2025-03-25 21:02:56.838 | INFO     | __main__:standardize_formats:175 - FUNCTION START: standardize_formats with dataframe shape=(94, 9)
+2025-03-25 21:02:56.838 | INFO     | __main__:standardize_formats:185 - Completed standardizing formats
+2025-03-25 21:02:56.838 | INFO     | __main__:remove_outliers:142 - FUNCTION START: remove_outliers with dataframe shape=(94, 9)
+2025-03-25 21:02:56.838 | INFO     | __main__:remove_outliers:161 - Removed 0 outlier rows
+2025-03-25 21:02:56.838 | INFO     | __main__:remove_outliers:162 - 94 records remaining after removing outliers.
+2025-03-25 21:02:56.838 | INFO     | __main__:validate_data:198 - FUNCTION START: validate_data with dataframe shape=(94, 9)
+2025-03-25 21:06:54.840 | INFO     | __main__:main:214 - ==================================
+2025-03-25 21:06:54.841 | INFO     | __main__:main:215 - STARTING prepare_sales_data.py
+2025-03-25 21:06:54.841 | INFO     | __main__:main:216 - ==================================
+2025-03-25 21:06:54.841 | INFO     | __main__:main:218 - Root project folder: C:\Projects\smart-store-derekfintel
+2025-03-25 21:06:54.841 | INFO     | __main__:main:219 - data / raw folder: C:\Projects\smart-store-derekfintel\data\raw
+2025-03-25 21:06:54.841 | INFO     | __main__:main:220 - data / prepared folder: C:\Projects\smart-store-derekfintel\data\prepared
+2025-03-25 21:06:54.841 | INFO     | __main__:read_raw_data:46 - FUNCTION START: read_raw_data with file_name=sales_data.csv
+2025-03-25 21:06:54.841 | INFO     | __main__:read_raw_data:48 - Reading data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv
+2025-03-25 21:06:54.844 | INFO     | __main__:read_raw_data:50 - Loaded dataframe with 94 rows and 9 columns
+2025-03-25 21:06:54.844 | INFO     | __main__:read_raw_data:55 - Column datatypes: 
+TransactionID        int64
+SaleDate            object
+CustomerID           int64
+ProductID            int64
+StoreID              int64
+CampaignID           int64
+SaleAmount         float64
+DiscountPercent      int64
+PaymentType         object
+dtype: object
+2025-03-25 21:06:54.845 | INFO     | __main__:read_raw_data:56 - Number of unique values: 
+TransactionID      94
+SaleDate           44
+CustomerID         11
+ProductID           8
+StoreID             6
+CampaignID          4
+SaleAmount         59
+DiscountPercent     5
+PaymentType         2
+dtype: int64
+2025-03-25 21:06:54.846 | INFO     | __main__:main:229 - Initial dataframe columns: TransactionID, SaleDate, CustomerID, ProductID, StoreID, CampaignID, SaleAmount, DiscountPercent, PaymentType
+2025-03-25 21:06:54.846 | INFO     | __main__:main:230 - Initial dataframe shape: (94, 9)
+2025-03-25 21:06:54.846 | INFO     | __main__:main:239 - Cleaned column names: TransactionID -> transactionid, SaleDate -> saledate, CustomerID -> customerid, ProductID -> productid, StoreID -> storeid, CampaignID -> campaignid, SaleAmount -> saleamount, DiscountPercent -> discountpercent, PaymentType -> paymenttype
+2025-03-25 21:06:54.847 | INFO     | __main__:remove_duplicates:83 - FUNCTION START: remove_duplicates with dataframe shape=(94, 9)
+2025-03-25 21:06:54.848 | INFO     | __main__:remove_duplicates:93 - Removed 0 duplicate rows
+2025-03-25 21:06:54.848 | INFO     | __main__:remove_duplicates:94 - 94 records remaining after removing duplicates.
+2025-03-25 21:06:54.848 | INFO     | __main__:handle_missing_values:108 - FUNCTION START: handle_missing_values with dataframe shape=(94, 9)
+2025-03-25 21:06:54.849 | INFO     | __main__:handle_missing_values:113 - Missing values by column before handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 21:06:54.849 | INFO     | __main__:handle_missing_values:127 - Missing values by column after handling:
+transactionid      0
+saledate           0
+customerid         0
+productid          0
+storeid            0
+campaignid         0
+saleamount         0
+discountpercent    0
+paymenttype        0
+dtype: int64
+2025-03-25 21:06:54.850 | INFO     | __main__:handle_missing_values:128 - 94 records remaining after handling missing values.
+2025-03-25 21:06:54.850 | INFO     | __main__:standardize_formats:175 - FUNCTION START: standardize_formats with dataframe shape=(94, 9)
+2025-03-25 21:06:54.850 | INFO     | __main__:standardize_formats:185 - Completed standardizing formats
+2025-03-25 21:06:54.850 | INFO     | __main__:remove_outliers:142 - FUNCTION START: remove_outliers with dataframe shape=(94, 9)
+2025-03-25 21:06:54.850 | INFO     | __main__:remove_outliers:161 - Removed 0 outlier rows
+2025-03-25 21:06:54.850 | INFO     | __main__:remove_outliers:162 - 94 records remaining after removing outliers.
+2025-03-25 21:06:54.850 | INFO     | __main__:validate_data:198 - FUNCTION START: validate_data with dataframe shape=(94, 9)

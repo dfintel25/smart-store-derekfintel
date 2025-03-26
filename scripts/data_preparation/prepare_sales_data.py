@@ -1,3 +1,17 @@
+"""
+scripts/data_preparation/prepare_products_data.py
+
+This script reads product data from the data/raw folder, cleans the data, 
+and writes the cleaned version to the data/prepared folder.
+
+Tasks:
+- Remove duplicates
+- Handle missing values
+- Remove outliers
+- Ensure consistent formatting
+
+"""
+
 import pathlib
 import sys
 import pandas as pd
@@ -38,8 +52,8 @@ def read_raw_data(file_name: str) -> pd.DataFrame:
     # TODO: OPTIONAL Add data profiling here to understand the dataset
     # Suggestion: Log the datatypes of each column and the number of unique values
     # Example:
-    # logger.info(f"Column datatypes: \n{df.dtypes}")
-    # logger.info(f"Number of unique values: \n{df.nunique()}")
+    logger.info(f"Column datatypes: \n{df.dtypes}")
+    logger.info(f"Number of unique values: \n{df.nunique()}")
     
     return df
 
@@ -186,9 +200,9 @@ def validate_data(df: pd.DataFrame) -> pd.DataFrame:
     # TODO: Implement data validation rules specific to products
     # Suggestion: Check for valid values in critical fields
     # Example:
-    # invalid_prices = df[df['price'] < 0].shape[0]
-    # logger.info(f"Found {invalid_prices} products with negative prices")
-    # df = df[df['price'] >= 0]
+    invalid_prices = df[df['price'] < 0].shape[0]
+    logger.info(f"Found {invalid_prices} products with negative prices")
+    df = df[df['price'] >= 0]
     
     logger.info("Data validation complete")
     return df
