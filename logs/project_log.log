@@ -36,3 +36,8 @@
 2025-03-25 19:04:02.265 | ERROR    | __main__:log_example:55 - This is an example error message.
 2025-03-25 19:04:02.265 | INFO     | __main__:main:67 - View the log output at logs\project_log.log
 2025-03-25 19:04:02.266 | INFO     | __main__:main:68 - EXITING utils_logger.py.
+2025-03-25 19:29:10.415 | INFO     | __main__:main:42 - Starting data preparation...
+2025-03-25 19:29:10.416 | INFO     | __main__:read_raw_data:27 - Reading raw data from C:\Projects\smart-store-derekfintel\data\raw\customers_data.csv.
+2025-03-25 19:29:10.424 | INFO     | __main__:read_raw_data:27 - Reading raw data from C:\Projects\smart-store-derekfintel\data\raw\products_data.csv.
+2025-03-25 19:29:10.427 | INFO     | __main__:read_raw_data:27 - Reading raw data from C:\Projects\smart-store-derekfintel\data\raw\sales_data.csv.
+2025-03-25 19:29:10.428 | INFO     | __main__:main:46 - Data preparation complete.

@@ -1,129 +1,256 @@
-"""
-Module 3: Data Preparation Script
-File: scripts/data_prep.py
+r"""
+scripts/data_scrubber.py
 
-This script is just one example of a possible data preparation process.
-It loads raw CSV files from the 'data/raw/' directory, cleans and prepares each file, 
-and saves the prepared data to 'data/prepared/'.
-The data preparation steps include removing duplicates, handling missing values, 
-trimming whitespace, and more.
+Do not run this script directly. 
+Instead, from this module (scripts.data_scrubber)
+import the DataScrubber class. 
 
-This script uses the general DataScrubber class and its methods to perform common, reusable tasks.
+Use it to create a DataScrubber object by passing in a DataFrame with your data. 
 
-To run it, open a terminal in the root project folder.
-Activate the local project virtual environment.
-Choose the correct command for your OS to run this script.
+Then, call the methods, providing arguments as needed to enjoy common, 
+re-usable cleaning and preparation methods. 
 
-py scripts\data_prep.py
-python3 scripts\data_prep.py
+See the associated test script in the tests folder. 
 
-NOTE: I use the ruff linter. 
-It warns if all import statements are not at the top of the file.  
-I was having trouble with the relative paths, so I  
-temporarily add the project root before I can import. 
-By adding this comment at the end of an import line noqa: E402
-ruff will ignore the warning on just that line. 
 """
 
-import pathlib
-import sys
+import io
 import pandas as pd
+from typing import Dict, Tuple, Union, List
 
-# For local imports, temporarily add project root to Python sys.path
-PROJECT_ROOT = pathlib.Path(__file__).resolve().parent.parent
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.append(str(PROJECT_ROOT))
+class DataScrubber:
+    def __init__(self, df: pd.DataFrame):
+        """
+        Initialize the DataScrubber with a DataFrame.
+        
+        Parameters:
+            df (pd.DataFrame): The DataFrame to be scrubbed.
+        """
+        self.df = df
 
-# Now we can import local modules
-from utils.logger import logger  # noqa: E402
-from scripts.data_scrubber import DataScrubber  # noqa: E402
+    def check_data_consistency_before_cleaning(self) -> Dict[str, Union[pd.Series, int]]:
+        """
+        Check data consistency before cleaning by calculating counts of null and duplicate entries.
+        
+        Returns:
+            dict: Dictionary with counts of null values and duplicate rows.
+        """
+        null_counts = self.df.isnull().sum()
+        duplicate_count = self.df.duplicated().sum()
+        return {'null_counts': null_counts, 'duplicate_count': duplicate_count}
 
-# Constants
-DATA_DIR: pathlib.Path = PROJECT_ROOT.joinpath("data")
-RAW_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("raw")
-PREPARED_DATA_DIR: pathlib.Path = DATA_DIR.joinpath("prepared")
+    def check_data_consistency_after_cleaning(self) -> Dict[str, Union[pd.Series, int]]:
+        """
+        Check data consistency after cleaning to ensure there are no null or duplicate entries.
+        
+        Returns:
+            dict: Dictionary with counts of null values and duplicate rows, expected to be zero for each.
+        """
+        null_counts = self.df.isnull().sum()
+        duplicate_count = self.df.duplicated().sum()
+        assert null_counts.sum() == 0, "Data still contains null values after cleaning."
+        assert duplicate_count == 0, "Data still contains duplicate records after cleaning."
+        return {'null_counts': null_counts, 'duplicate_count': duplicate_count}
 
-def read_raw_data(file_name: str) -> pd.DataFrame:
-    """Read raw data from CSV."""
-    file_path: pathlib.Path = RAW_DATA_DIR.joinpath(file_name)
-    return pd.read_csv(file_path)
+    def convert_column_to_new_data_type(self, column: str, new_type: type) -> pd.DataFrame:
+        """
+        Convert a specified column to a new data type.
+        
+        Parameters:
+            column (str): Name of the column to convert.
+            new_type (type): The target data type (e.g., 'int', 'float', 'str').
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with the column type converted.
 
-def save_prepared_data(df: pd.DataFrame, file_name: str) -> None:
-    """Save cleaned data to CSV."""
-    file_path: pathlib.Path = PREPARED_DATA_DIR.joinpath(file_name)
-    df.to_csv(file_path, index=False)
-    logger.info(f"Data saved to {file_path}")
+        Raises:
+            ValueError: If the specified column not found in the DataFrame.
+        """
+        try:
+            self.df[column] = self.df[column].astype(new_type)
+            return self.df
+        except KeyError:
+            raise ValueError(f"Column name '{column}' not found in the DataFrame.")
 
-def main() -> None:
-    """Main function for pre-processing customer, product, and sales data."""
-    logger.info("======================")
-    logger.info("STARTING data_prep.py")
-    logger.info("======================")
+    def drop_columns(self, columns: List[str]) -> pd.DataFrame:
+        """
+        Drop specified columns from the DataFrame.
+        
+        Parameters:
+            columns (list): List of column names to drop.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with specified columns removed.
 
-    logger.info("========================")
-    logger.info("Starting CUSTOMERS prep")
-    logger.info("========================")
+        Raises:
+            ValueError: If a specified column is not found in the DataFrame.
+        """
+        for column in columns:
+            if column not in self.df.columns:
+                raise ValueError(f"Column name '{column}' not found in the DataFrame.")
+        self.df = self.df.drop(columns=columns)
+        return self.df
 
-    df_customers = read_raw_data("customers_data.csv")
+    def filter_column_outliers(self, column: str, lower_bound: Union[float, int], upper_bound: Union[float, int]) -> pd.DataFrame:
+        """
+        Filter outliers in a specified column based on lower and upper bounds.
+        
+        Parameters:
+            column (str): Name of the column to filter for outliers.
+            lower_bound (float or int): Lower threshold for outlier filtering.
+            upper_bound (float or int): Upper threshold for outlier filtering.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with outliers filtered out.
+ 
+        Raises:
+            ValueError: If the specified column not found in the DataFrame.
+        """
+        try:
+            self.df = self.df[(self.df[column] >= lower_bound) & (self.df[column] <= upper_bound)]
+            return self.df
+        except KeyError:
+            raise ValueError(f"Column name '{column}' not found in the DataFrame.")
 
-    df_customers.columns = df_customers.columns.str.strip()  # Clean column names
-    df_customers = df_customers.drop_duplicates()            # Remove duplicates
+    def format_column_strings_to_lower_and_trim(self, column: str) -> pd.DataFrame:
+        """
+        Format strings in a specified column by converting to lowercase and trimming whitespace.
+        
+        Parameters:
+            column (str): Name of the column to format.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with formatted string column.
 
-    df_customers['Name'] = df_customers['Name'].str.strip()  # Trim whitespace from column values
-    df_customers = df_customers.dropna(subset=['CustomerID', 'Name'])  # Drop rows missing critical info
-    
-    scrubber_customers = DataScrubber(df_customers)
-    scrubber_customers.check_data_consistency_before_cleaning()
-    scrubber_customers.inspect_data()
-    
-    df_customers = scrubber_customers.handle_missing_data(fill_value="N/A")
-    df_customers = scrubber_customers.parse_dates_to_add_standard_datetime('JoinDate')
-    scrubber_customers.check_data_consistency_after_cleaning()
+        Raises:
+            ValueError: If the specified column not found in the DataFrame.
+        """
+        try:
+            self.df[column] = self.df[column].str.lower().str.strip()
+            return self.df
+        except KeyError:
+            raise ValueError(f"Column name '{column}' not found in the DataFrame.")
+        
+    def format_column_strings_to_upper_and_trim(self, column: str) -> pd.DataFrame:
+        """
+        Format strings in a specified column by converting to uppercase and trimming whitespace.
+        
+        Parameters:
+            column (str): Name of the column to format.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with formatted string column.
 
-    save_prepared_data(df_customers, "customers_data_prepared.csv")
+        Raises:
+            ValueError: If the specified column not found in the DataFrame.
+        """
+        try:
+            # TODO: Fix the following logic to call str.upper() and str.strip() on the given column 
+            # HINT: See previous function for an example
+            self.df[column] = self.df[column]
+            return self.df
+        except KeyError:
+            raise ValueError(f"Column name '{column}' not found in the DataFrame.")
 
-    logger.info("========================")
-    logger.info("Starting PRODUCTS prep")
-    logger.info("========================")
+    def handle_missing_data(self, drop: bool = False, fill_value: Union[None, float, int, str] = None) -> pd.DataFrame:
+        """
+        Handle missing data in the DataFrame.
+        
+        Parameters:
+            drop (bool, optional): If True, drop rows with missing values. Default is False.
+            fill_value (any, optional): Value to fill in for missing entries if drop is False.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with missing data handled.
+        """
+        if drop:
+            self.df = self.df.dropna()
+        elif fill_value is not None:
+            self.df = self.df.fillna(fill_value)
+        return self.df
 
-    df_products = read_raw_data("products_data.csv")
+    def inspect_data(self) -> Tuple[str, str]:
+        """
+        Inspect the data by providing DataFrame information and summary statistics.
+        
+        Returns:
+            tuple: (info_str, describe_str), where `info_str` is a string representation of DataFrame.info()
+                   and `describe_str` is a string representation of DataFrame.describe().
+        """
+        buffer = io.StringIO()
+        self.df.info(buf=buffer)
+        info_str = buffer.getvalue()  # Retrieve the string content of the buffer
 
-    df_products.columns = df_products.columns.str.strip()  # Clean column names
-    df_products = df_products.drop_duplicates()            # Remove duplicates
+        # Capture the describe output as a string
+        describe_str = self.df.describe().to_string()  # Convert DataFrame.describe() output to a string
+        return info_str, describe_str
 
-    df_products['ProductName'] = df_products['ProductName'].str.strip()  # Trim whitespace from column values
-    
-    scrubber_products = DataScrubber(df_products)
-    scrubber_products.check_data_consistency_before_cleaning()
-    scrubber_products.inspect_data()
+    def parse_dates_to_add_standard_datetime(self, column: str) -> pd.DataFrame:
+        """
+        Parse a specified column as datetime format and add it as a new column named 'StandardDateTime'.
+        
+        Parameters:
+            column (str): Name of the column to parse as datetime.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with a new 'StandardDateTime' column containing parsed datetime values.
 
-    scrubber_products.check_data_consistency_after_cleaning()
-    save_prepared_data(df_products, "products_data_prepared.csv")
+        Raises:
+            ValueError: If the specified column not found in the DataFrame.
+        """
+        try:
+            self.df['StandardDateTime'] = pd.to_datetime(self.df[column])
+            return self.df
+        except KeyError:
+            raise ValueError(f"Column name '{column}' not found in the DataFrame.")
 
-    logger.info("========================")
-    logger.info("Starting SALES prep")
-    logger.info("========================")
+    def remove_duplicate_records(self) -> pd.DataFrame:
+        """
+        Remove duplicate rows from the DataFrame.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with duplicates removed.
 
-    df_sales = read_raw_data("sales_data.csv")
+        """
+        self.df = self.df.drop_duplicates()
+        return self.df
 
-    df_sales.columns = df_sales.columns.str.strip()  # Clean column names
-    df_sales = df_sales.drop_duplicates()            # Remove duplicates
+    def rename_columns(self, column_mapping: Dict[str, str]) -> pd.DataFrame:
+        """
+        Rename columns in the DataFrame based on a provided mapping.
+        
+        Parameters:
+            column_mapping (dict): Dictionary where keys are old column names and values are new names.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with renamed columns.
 
-    df_sales['SaleDate'] = pd.to_datetime(df_sales['SaleDate'], errors='coerce')  # Ensure sale_date is datetime
-    df_sales = df_sales.dropna(subset=['TransactionID', 'SaleDate'])  # Drop rows missing key information
-    
-    scrubber_sales = DataScrubber(df_sales)
-    scrubber_sales.check_data_consistency_before_cleaning()
-    scrubber_sales.inspect_data()
-    
-    df_sales = scrubber_sales.handle_missing_data(fill_value="Unknown")
-    scrubber_sales.check_data_consistency_after_cleaning()
+        Raises:
+            ValueError: If a specified column is not found in the DataFrame.
+        """
 
-    save_prepared_data(df_sales, "sales_data_prepared.csv")
+        for old_name, new_name in column_mapping.items():
+            if old_name not in self.df.columns:
+                raise ValueError(f"Column '{old_name}' not found in the DataFrame.")
 
-    logger.info("======================")
-    logger.info("FINISHED data_prep.py")
-    logger.info("======================")
+        self.df = self.df.rename(columns=column_mapping)
+        return self.df
 
-if __name__ == "__main__":
-    main()
+    def reorder_columns(self, columns: List[str]) -> pd.DataFrame:
+        """
+        Reorder columns in the DataFrame based on the specified order.
+        
+        Parameters:
+            columns (list): List of column names in the desired order.
+        
+        Returns:
+            pd.DataFrame: Updated DataFrame with reordered columns.
+
+        Raises:
+            ValueError: If a specified column is not found in the DataFrame.
+        """
+        for column in columns:
+            if column not in self.df.columns:
+                raise ValueError(f"Column name '{column}' not found in the DataFrame.")
+        self.df = self.df[columns]
+        return self.df
