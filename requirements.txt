@@ -214,3 +214,5 @@ wordcloud
 
 #Datascrubber module
 DataScrubber 
+
+Scripts
