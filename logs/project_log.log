@@ -1389,3 +1389,6 @@ dtype: int64
 2025-03-25 22:08:56.249 | INFO     | __main__:main:250 - ==================================
 2025-03-25 22:08:56.249 | INFO     | __main__:main:251 - FINISHED prepare_sales_data.py
 2025-03-25 22:08:56.249 | INFO     | __main__:main:252 - ==================================
+2025-04-02 18:34:13.182 | INFO     | __main__:main:43 - Starting data warehouse creation...
+2025-04-02 18:34:13.183 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
+2025-04-02 18:34:13.183 | INFO     | __main__:main:45 - Data warehouse creation complete.
