@@ -1405,3 +1405,19 @@ dtype: int64
 2025-04-02 21:03:45.961 | INFO     | __main__:main:43 - Starting data warehouse creation...
 2025-04-02 21:03:45.961 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
 2025-04-02 21:03:45.961 | INFO     | __main__:main:45 - Data warehouse creation complete.
+2025-04-02 22:18:01.830 | INFO     | __main__:<module>:80 - Data warehouse created successfully.
+2025-04-02 22:18:01.830 | INFO     | __main__:main:86 - Starting data warehouse creation...
+2025-04-02 22:18:01.831 | ERROR    | __main__:create_dw:73 - An unexpected error occurred: name 'cursor' is not defined
+2025-04-02 22:18:01.831 | INFO     | __main__:main:88 - Data warehouse creation complete.
+2025-04-02 22:19:52.910 | INFO     | __main__:<module>:80 - Data warehouse created successfully.
+2025-04-02 22:19:52.911 | INFO     | __main__:main:86 - Starting data warehouse creation...
+2025-04-02 22:19:52.911 | INFO     | __main__:main:88 - Data warehouse creation complete.
+2025-04-02 22:20:43.217 | INFO     | __main__:<module>:80 - Data warehouse created successfully.
+2025-04-02 22:20:43.218 | INFO     | __main__:main:86 - Starting data warehouse creation...
+2025-04-02 22:20:43.219 | INFO     | __main__:main:88 - Data warehouse creation complete.
+2025-04-02 22:27:18.880 | INFO     | __main__:<module>:80 - Data warehouse created successfully.
+2025-04-02 22:27:18.881 | INFO     | __main__:main:86 - Starting data warehouse creation...
+2025-04-02 22:27:18.882 | INFO     | __main__:main:88 - Data warehouse creation complete.
+2025-04-02 22:39:44.769 | INFO     | __main__:<module>:80 - Data warehouse created successfully.
+2025-04-02 22:39:44.770 | INFO     | __main__:main:86 - Starting data warehouse creation...
+2025-04-02 22:39:44.770 | INFO     | __main__:main:88 - Data warehouse creation complete.

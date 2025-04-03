@@ -68,6 +68,7 @@ def insert_customers(customers_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None
         "LoyaltyPoints": "loyalty_points",
         "Demographic": "demographic"
     })
+    customers_df.rename(columns={"loyalty_points": "LoyaltyPoints"}, inplace=True)
     customers_df.to_sql("customer", cursor.connection, if_exists="append", index=False)
 
 def insert_products(products_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
@@ -102,7 +103,7 @@ def insert_sales(sales_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
 
     sales_df.to_sql("sale", cursor.connection, if_exists="append", index=False)
 
-def load_data_to_db() -> None:
+def load_data_to_db(smart_sales) -> None:
     try:
         # Connect to SQLite – will create the file if it doesn't exist
         conn = sqlite3.connect(DB_PATH)
@@ -127,13 +128,10 @@ def load_data_to_db() -> None:
         if conn:
             conn.close()
 
+        #cursor.execute("PRAGMA table_info(customer);")
+        #columns = cursor.fetchall()
+        #print("SQLite Table Columns:", columns)
+
+
 if __name__ == "__main__":
-    load_data_to_db()
-
-print(cursor.connection)
-
-print(customers_df.columns)  # Check DataFrame columns
-
-cursor.execute("PRAGMA table_info(customer);")
-columns = cursor.fetchall()
-print("SQLite Table Columns:", columns)  # Check database table columns
+        load_data_to_db("smart_sales.db")

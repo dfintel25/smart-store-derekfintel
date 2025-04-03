@@ -25,18 +25,61 @@ def create_dw() -> None:
         conn = sqlite3.connect(DB_PATH)
 
         # Will need more magic here....
+    
+        def create_schema(cursor: sqlite3.Cursor) -> None:
+            """Create tables in the data warehouse if they don't exist."""
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS customer (
+            customer_id INTEGER PRIMARY KEY,
+            name TEXT,
+            region TEXT,
+            join_date TEXT
+            loyaltypoints INTEGER,
+            demographic TEXT
+                )
+            """)
+    
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS product (
+            product_id INTEGER PRIMARY KEY,
+            product_name TEXT,
+            category TEXT,
+            unitprice INTEGER,
+            stockquantity INTEGER,
+            storesection TEXT
+                )
+            """)
 
-        # Close the connection
-        conn.close()
-        logger.info("Data warehouse created successfully.")
+            cursor.execute("""
+            CREATE TABLE IF NOT EXISTS sale (
+            transaction_id INTEGER PRIMARY KEY,
+            customer_id INTEGER,
+            product_id INTEGER,
+            storeid INTEGER,
+            campaignid INTEGER,
+            sales_amount REAL,
+            sales_date TEXT,
+            discountpercent INTEGER,
+            paymenttype TEXT,
+            FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
+            FOREIGN KEY (product_id) REFERENCES product (product_id)
+                )
+            """)
+
 
     except sqlite3.Error as e:
-        logger.error(f"Error connecting to the database: {e}")
+     logger.error(f"Error connecting to the database: {e}")
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
+
     finally:
         if conn:
             conn.close()
+        # Close the connection
+        conn.close()
+logger.info("Data warehouse created successfully.")
+
+
 
 def main() -> None:
     """Main function to create the data warehouse."""
