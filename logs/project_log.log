@@ -1392,3 +1392,16 @@ dtype: int64
 2025-04-02 18:34:13.182 | INFO     | __main__:main:43 - Starting data warehouse creation...
 2025-04-02 18:34:13.183 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
 2025-04-02 18:34:13.183 | INFO     | __main__:main:45 - Data warehouse creation complete.
+2025-04-02 20:49:30.703 | INFO     | __main__:main:43 - Starting data warehouse creation...
+2025-04-02 20:49:30.704 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
+2025-04-02 20:49:30.704 | INFO     | __main__:main:45 - Data warehouse creation complete.
+2025-04-02 20:57:24.878 | INFO     | __main__:<module>:33 - Existing database data\dw\smart_sales.db deleted.
+2025-04-02 20:57:24.879 | INFO     | __main__:main:115 - Starting data warehouse creation...
+2025-04-02 20:57:24.884 | INFO     | __main__:create_customer_table:48 - customer table created.
+2025-04-02 20:57:24.886 | INFO     | __main__:create_product_table:63 - product table created.
+2025-04-02 20:57:24.888 | INFO     | __main__:create_sale_table:84 - sale table created.
+2025-04-02 20:57:24.889 | INFO     | __main__:create_dw:103 - Data warehouse created successfully.
+2025-04-02 20:57:24.889 | INFO     | __main__:main:117 - Data warehouse creation complete.
+2025-04-02 21:03:45.961 | INFO     | __main__:main:43 - Starting data warehouse creation...
+2025-04-02 21:03:45.961 | INFO     | __main__:create_dw:31 - Data warehouse created successfully.
+2025-04-02 21:03:45.961 | INFO     | __main__:main:45 - Data warehouse creation complete.

@@ -20,9 +20,9 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
             customer_id INTEGER PRIMARY KEY,
             name TEXT,
             region TEXT,
-            join_date TEXT
-            loyaltypoints INTEGER,
-            demographic TEXT
+            join_date TEXT,
+            loyalty_points INTEGER,
+            preferred_contact_method TEXT
         )
     """)
     
@@ -31,23 +31,23 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
             product_id INTEGER PRIMARY KEY,
             product_name TEXT,
             category TEXT,
-            unitprice INTEGER,
-            stockquantity INTEGER,
-            storesection TEXT
+            unit_price REAL,
+            stock_quantity INTEGER,
+            supplier TEXT
         )
     """)
     
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS sale (
-            transaction_id INTEGER PRIMARY KEY,
+            sale_id INTEGER PRIMARY KEY,
             customer_id INTEGER,
             product_id INTEGER,
-            storeid INTEGER,
-            campaignid INTEGER,
-            sales_amount REAL,
-            sales_date TEXT,
-            discountpercent INTEGER,
-            paymenttype TEXT,
+            sale_amount REAL,
+            sale_date TEXT,
+            store_id INTEGER,
+            campaign_id INTEGER,
+            discount_percent INTEGER,
+            payment_type TEXT,
             FOREIGN KEY (customer_id) REFERENCES customer (customer_id),
             FOREIGN KEY (product_id) REFERENCES product (product_id)
         )
@@ -58,6 +58,7 @@ def delete_existing_records(cursor: sqlite3.Cursor) -> None:
     cursor.execute("DELETE FROM customer")
     cursor.execute("DELETE FROM product")
     cursor.execute("DELETE FROM sale")
+
 def insert_customers(customers_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     """Insert customer data into the customer table."""
     customers_df = customers_df.rename(columns={
@@ -66,7 +67,7 @@ def insert_customers(customers_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None
         "Region": "region",
         "JoinDate": "join_date",
         "LoyaltyPoints": "loyalty_points",
-        "Demographic": "demographic"
+        "PreferredContactMethod": "preferred_contact_method"
     })
     customers_df.to_sql("customer", cursor.connection, if_exists="append", index=False)
 
@@ -78,7 +79,7 @@ def insert_products(products_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
         "Category": "category",
         "UnitPrice": "unit_price",
         "StockQuantity": "stock_quantity",
-        "storesection": "store_section"
+        "Supplier": "supplier"
     })
     products_df.to_sql("product", cursor.connection, if_exists="append", index=False)
 
@@ -89,7 +90,7 @@ def insert_sales(sales_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
 
     # Rename lowercase columns with no underscores to match the SQL schema
     sales_df = sales_df.rename(columns={
-        "transactionid": "transaction_id",
+        "transactionid": "sale_id",
         "customerid": "customer_id",
         "productid": "product_id",
         "saleamount": "sale_amount",
@@ -129,11 +130,3 @@ def load_data_to_db() -> None:
 
 if __name__ == "__main__":
     load_data_to_db()
-
-print(cursor.connection)
-
-print(customers_df.columns)  # Check DataFrame columns
-
-cursor.execute("PRAGMA table_info(customer);")
-columns = cursor.fetchall()
-print("SQLite Table Columns:", columns)  # Check database table columns
