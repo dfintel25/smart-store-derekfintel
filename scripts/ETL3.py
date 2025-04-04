@@ -49,7 +49,7 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
             product_id INTEGER,
             storeid INTEGER,
             campaignid INTEGER,
-            sales_amount REAL,
+            sale_amount REAL,
             sale_date TEXT,
             discountpercent INTEGER,
             paymenttype TEXT,
@@ -58,19 +58,24 @@ def create_schema(cursor: sqlite3.Cursor) -> None:
         )
     """)
 
-
-
-
 def insert_customers(customers_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     """Insert customer data into the customer table."""
     customers_df.to_sql("customer", cursor.connection, if_exists="append", index=False)
 
 def insert_products(products_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     """Insert product data into the product table."""
+    products_df.rename(columns={'productid': 'product_id'}, inplace=True)
+    products_df.rename(columns={'productname': 'product_name'}, inplace=True)
+    products_df.rename(columns={'unitprice': 'unit_price'}, inplace=True)
     products_df.to_sql("product", cursor.connection, if_exists="append", index=False)
 
 def insert_sales(sales_df: pd.DataFrame, cursor: sqlite3.Cursor) -> None:
     """Insert sales data into the sales table."""
+    sales_df.rename(columns={'transactionid': 'transaction_id'}, inplace=True)
+    sales_df.rename(columns={'saledate': 'sale_date'}, inplace=True)
+    sales_df.rename(columns={'customerid': 'customer_id'}, inplace=True)
+    sales_df.rename(columns={'productid': 'product_id'}, inplace=True)
+    sales_df.rename(columns={'saleamount': 'sale_amount'}, inplace=True)
     sales_df.to_sql("sale", cursor.connection, if_exists="append", index=False)
 
 def delete_existing_records(cursor: sqlite3.Cursor) -> None:
