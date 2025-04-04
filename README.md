@@ -32,3 +32,11 @@ git push -u origin main
    git clone example-repo-url
 3. Open your new cloned repository in VS Code.
 ```
+### Product Table Schema
+![Product](image.png)
+
+### Customer Table Schema
+![Customer](image-1.png)
+
+### Sales Table Schema
+![Sales](image-2.png)
