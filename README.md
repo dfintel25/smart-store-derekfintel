@@ -40,10 +40,10 @@ git push -u origin main
 ```
 ### Below are the schemas for our tables used
 ### Product Table Schema
-![Product](image.png)
+![Product](image-4.png)
 
 ### Customer Table Schema
-![Customer](image-1.png)
+![Customer](image-3.png)
 
 ### Sales Table Schema
-![Sales](image-2.png)
+![Sales](image-5.png)
