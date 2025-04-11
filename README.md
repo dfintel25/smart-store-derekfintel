@@ -47,3 +47,26 @@ git push -u origin main
 
 ### Sales Table Schema
 ![Sales](image-5.png)
+
+### Power BI & SQLite3 
+```
+Within Power BI, we established a DNS connection to our smart_sales.db via ODBC connector.
+-ODBC connector; Windows x64.exe: https://www.ch-werner.de/sqliteodbc
+
+Once our Power BI was connected, we established a query via Power Query Editor to capture total_sales:
+= Value.NativeQuery(Source, "
+        SELECT c.name, SUM(s.sale_amount) AS total_spent
+        FROM sale s
+        JOIN customer c ON s.customer_id = c.customer_id
+        GROUP BY c.name
+        ORDER BY total_spent DESC;
+    ")
+
+Here are some snips of the outcome:
+
+1) Power BI Model Views / Spark SQL Schema
+![Sales over time per region.](image.png)
+![Top Customers](image-1.png)
+![Sales Trends](image-2.png)
+![Data Model](image-6.png)
+![Top Customer table view](image-7.png)
