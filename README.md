@@ -74,4 +74,4 @@ Here are some snips of the outcome:
 
 !![Data Model](image-6.png)
 
-![Top Customer table view](image-7.png)
+![Top Customer table view](image.png)
