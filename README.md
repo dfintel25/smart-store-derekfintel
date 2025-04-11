@@ -65,8 +65,13 @@ Once our Power BI was connected, we established a query via Power Query Editor t
 Here are some snips of the outcome:
 
 1) Power BI Model Views / Spark SQL Schema
+
 ![Sales over time per region.](image.png)
+
 ![Top Customers](image-1.png)
+
 ![Sales Trends](image-2.png)
-![Data Model](image-6.png)
-![Top Customer table view](image-7.png)
+
+!![Data Model](<Screenshot 2025-04-10 221709.png>)
+
+![Top Customer table view](c:\Users\derek\OneDrive\Pictures\Screenshots 1\Screenshot 2025-04-10 221811.png)
