@@ -72,6 +72,6 @@ Here are some snips of the outcome:
 
 ![Sales Trends](image-2.png)
 
-!![Data Model](<Screenshot 2025-04-10 221709.png>)
+!![Data Model](image-6.png)
 
-![Top Customer table view](c:\Users\derek\OneDrive\Pictures\Screenshots 1\Screenshot 2025-04-10 221811.png)
+![Top Customer table view](image-7.png)
