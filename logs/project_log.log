@@ -1431,3 +1431,23 @@ dtype: int64
 2025-04-16 21:01:14.519 | ERROR    | __main__:load_olap_cube:53 - Error loading OLAP cube data: [Errno 2] No such file or directory: 'data\\olap_cubing_outputs\\multidimensional_olap_cube.csv'
 2025-04-16 21:01:41.023 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
 2025-04-16 21:01:41.024 | ERROR    | __main__:load_olap_cube:51 - Error loading OLAP cube data: [Errno 2] No such file or directory: 'data\\olap_cubing_outputs\\multidimensional_olap_cube.csv'
+2025-04-17 19:30:37.473 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 19:30:37.475 | ERROR    | __main__:load_olap_cube:51 - Error loading OLAP cube data: [Errno 2] No such file or directory: 'data\\olap_cubing_outputs\\multidimensional_olap_cube.csv'
+2025-04-17 19:44:37.335 | INFO     | __main__:main:209 - Starting OLAP Cubing process...
+2025-04-17 19:44:37.349 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 19:44:37.360 | ERROR    | __main__:create_olap_cube:165 - Error creating OLAP cube: "Column(s) ['sale_amount_usd', 'sale_id'] do not exist"
+2025-04-17 19:49:10.282 | INFO     | __main__:main:209 - Starting OLAP Cubing process...
+2025-04-17 19:49:10.286 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 19:49:10.290 | ERROR    | __main__:create_olap_cube:165 - Error creating OLAP cube: "Column(s) ['sale_id'] do not exist"
+2025-04-17 19:50:27.589 | INFO     | __main__:main:209 - Starting OLAP Cubing process...
+2025-04-17 19:50:27.593 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 19:50:27.619 | ERROR    | __main__:create_olap_cube:165 - Error creating OLAP cube: Length mismatch: Expected axis has 6 elements, new values have 7 elements
+2025-04-17 19:52:07.091 | INFO     | __main__:main:214 - Starting OLAP Cubing process...
+2025-04-17 19:52:07.095 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 19:52:07.119 | ERROR    | __main__:create_olap_cube:170 - Error creating OLAP cube: Length mismatch: Expected axis has 6 elements, new values have 7 elements
+2025-04-17 19:53:41.619 | INFO     | __main__:main:223 - Starting OLAP Cubing process...
+2025-04-17 19:53:41.622 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 19:53:41.635 | INFO     | __main__:create_olap_cube:176 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id']
+2025-04-17 19:53:41.641 | INFO     | __main__:write_cube_to_csv:215 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 19:53:41.642 | INFO     | __main__:main:247 - OLAP Cubing process completed successfully.
+2025-04-17 19:53:41.647 | INFO     | __main__:main:248 - Please see outputs in data\olap_cubing_outputs

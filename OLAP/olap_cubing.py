@@ -68,7 +68,7 @@ customer table example
 FACT TABLE:
 
 sale table example
-   sale_id,customer_id,product_id,sale_date,sale_amount_usd
+   transaction_id,customer_id,product_id,sale_date,sale_amount
    550,1001,101,2024-01-06,6344.96
    551,1002,102,2024-01-06,312.80
    552,1003,103,2024-01-16,431.00
@@ -77,7 +77,7 @@ sale table example
 THIS EXAMPLE OUTPUTS:
 
 This example assumes a cube data set with the following column names (yours will differ).
-DayOfWeek,product_id,customer_id,sale_amount_usd_sum,sale_id_count,sale_ids
+DayOfWeek,product_id,customer_id,sale_amount_sum,transaction_id_count,transaction_id
 Friday,101,1001,6344.96,1,[582]
 etc.
 
@@ -152,11 +152,25 @@ def create_olap_cube(
         cube = grouped.agg(metrics).reset_index()
 
         # Add a list of sale IDs for traceability
-        cube["sale_ids"] = grouped["sale_id"].apply(list).reset_index(drop=True)
+        cube["transaction_id"] = grouped["transaction_id"].apply(list).reset_index(drop=True)
 
         # Generate explicit column names
         explicit_columns = generate_column_names(dimensions, metrics)
-        explicit_columns.append("sale_ids")  # Include the traceability column
+        explicit_columns.append("transaction_id")  # Include the traceability column
+        explicit_columns = [
+        'DayOfWeek',
+        'product_id',
+        'customer_id',
+        'sale_amount_sum',
+        'sale_amount_mean',
+        'transaction_id_count'
+        ]
+
+        print("cube.columns:", cube.columns.tolist())
+        print("explicit_columns:", explicit_columns)
+        print("len(cube.columns):", len(cube.columns))
+        print("len(explicit_columns):", len(explicit_columns))
+
         cube.columns = explicit_columns
 
         logger.info(f"OLAP cube created with dimensions: {dimensions}")
@@ -220,8 +234,8 @@ def main():
     # Step 3: Define dimensions and metrics for the cube
     dimensions = ["DayOfWeek", "product_id", "customer_id"]
     metrics = {
-        "sale_amount_usd": ["sum", "mean"],
-        "sale_id": "count"
+        "sale_amount": ["sum", "mean"],
+        "transaction_id": "count"
     }
 
     # Step 4: Create the cube
