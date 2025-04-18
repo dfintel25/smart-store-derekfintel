@@ -5,14 +5,13 @@
 ### Project Intro
 This README covers an overiew of a brief OLAP (Online Analytical Processing) project. 
 
-### Preliminary Setup Steps
 ### 1. The Business Goal
 ```
 For this project we wanted to access specific tables within our 'smart_sales.db' to generate business insights pertinent to supporting potential advertising and product development strategies. 
 
 In particular, we sought to leverage our tools to generate understandings of:
 - What are the total sales per day of the week?
-- What are the total sales per day of the PER a given region?
+- What are the total sales per day PER a given region?
 - What are the total sales per day of a given product?
 ```
 ### 2. Data Source
@@ -31,7 +30,16 @@ len(cube.columns): 8
 ```
 ### 3. Tools
 ```
-1. Tell us what tools you used and why.
+For tools, we used a handful of critical items to execute our analysis. For major applications, we utilized **Python** to render executable code, **Power BI** for initial visualiztions, **SQLIte** for data warehouse, **VS Code** for project development, and **GitHub** for artifact management. 
+
+See below for a list of imports:
+*pandas as pd*
+*sqlite3*
+*pathlib*
+*sys*
+*matplotlib.pyplot as plt*
+*seaborn as sns*
+
 ```
 ### 4. Workflow & Logic
 ```
