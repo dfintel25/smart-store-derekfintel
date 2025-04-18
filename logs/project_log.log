@@ -1514,3 +1514,71 @@ dtype: int64
 2025-04-17 21:48:08.696 | INFO     | __main__:analyze_top_product_by_weekday:64 - Top products identified for each day of the week.
 2025-04-17 21:48:09.039 | INFO     | __main__:visualize_sales_by_weekday_and_product:101 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
 2025-04-17 21:48:19.127 | INFO     | __main__:main:121 - Analysis and visualization completed successfully.
+2025-04-17 22:01:53.737 | INFO     | __main__:main:148 - Starting OLAP Cubing process...
+2025-04-17 22:01:53.739 | ERROR    | __main__:ingest_sales_data_from_dw:28 - Error loading sale table data from data warehouse: unable to open database file
+2025-04-17 22:04:07.254 | INFO     | __main__:main:149 - Starting OLAP Cubing process...
+2025-04-17 22:04:07.259 | INFO     | __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 22:04:07.261 | INFO     | __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 22:04:07.283 | INFO     | __main__:create_olap_cube:103 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
+2025-04-17 22:04:07.289 | INFO     | __main__:write_cube_to_csv:142 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:04:07.290 | INFO     | __main__:main:178 - OLAP Cubing process completed successfully.
+2025-04-17 22:04:07.291 | INFO     | __main__:main:179 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 22:06:09.222 | INFO     | __main__:main:149 - Starting OLAP Cubing process...
+2025-04-17 22:06:09.225 | INFO     | __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 22:06:09.229 | INFO     | __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 22:06:09.245 | INFO     | __main__:create_olap_cube:103 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
+2025-04-17 22:06:09.247 | INFO     | __main__:write_cube_to_csv:142 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:06:09.249 | INFO     | __main__:main:178 - OLAP Cubing process completed successfully.
+2025-04-17 22:06:09.250 | INFO     | __main__:main:179 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 22:06:09.273 | INFO     | __main__:main:134 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-17 22:06:09.277 | INFO     | __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:06:09.280 | INFO     | __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
+2025-04-17 22:06:09.282 | INFO     | __main__:identify_least_profitable_day:57 - Least profitable day: Friday with revenue $8617.76.
+2025-04-17 22:06:09.283 | INFO     | __main__:main:140 - Least profitable day: Friday
+2025-04-17 22:06:09.435 | INFO     | __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-17 22:06:09.512 | INFO     | __main__:analyze_sales_by_day_and_region:47 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-17 22:06:09.729 | INFO     | __main__:visualize_sales_by_day_and_region:104 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-17 22:06:10.161 | INFO     | __main__:visualize_region_heatmap:126 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-17 22:06:10.265 | INFO     | __main__:main:148 - Full analysis and visualization completed.
+2025-04-17 22:06:10.304 | INFO     | __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 22:06:10.313 | INFO     | __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:06:10.323 | INFO     | __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
+2025-04-17 22:06:10.527 | INFO     | __main__:visualize_sales_by_weekday_and_product:74 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
+2025-04-17 22:06:10.643 | INFO     | __main__:main:94 - Analysis and visualization completed successfully.
+2025-04-17 22:13:14.710 | INFO     | __main__:main:149 - Starting OLAP Cubing process...
+2025-04-17 22:13:14.717 | INFO     | __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 22:13:14.720 | INFO     | __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 22:13:14.736 | INFO     | __main__:create_olap_cube:103 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
+2025-04-17 22:13:14.739 | INFO     | __main__:write_cube_to_csv:142 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:13:14.741 | INFO     | __main__:main:178 - OLAP Cubing process completed successfully.
+2025-04-17 22:13:14.742 | INFO     | __main__:main:179 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 22:13:14.772 | INFO     | __main__:main:172 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-17 22:13:14.778 | INFO     | __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:13:14.805 | INFO     | __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
+2025-04-17 22:13:14.814 | INFO     | __main__:identify_least_profitable_day:57 - Least profitable day: Friday with revenue $8617.76.
+2025-04-17 22:13:14.816 | INFO     | __main__:main:178 - Least profitable day: Friday
+2025-04-17 22:13:14.963 | INFO     | __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-17 22:13:15.045 | INFO     | __main__:analyze_sales_by_day_and_region:47 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-17 22:13:15.250 | INFO     | __main__:visualize_sales_by_day_and_region:104 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-17 22:13:15.582 | INFO     | __main__:visualize_region_heatmap:126 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-17 22:13:15.698 | INFO     | __main__:generate_statistical_insights:135 - Sales by Day of Week - Summary Statistics:
+2025-04-17 22:13:15.700 | INFO     | __main__:generate_statistical_insights:136 - 
+count        7.000000
+mean     15508.048571
+std       6856.847357
+min       8617.760000
+25%       9856.510000
+50%      12528.520000
+75%      21149.030000
+max      25398.980000
+Name: TotalSales, dtype: float64
+2025-04-17 22:13:15.702 | INFO     | __main__:generate_statistical_insights:146 - High-performing days (Z > 1): ['Thursday']
+2025-04-17 22:13:15.703 | INFO     | __main__:generate_statistical_insights:147 - Low-performing days (Z < -1): ['Friday']
+2025-04-17 22:13:15.704 | INFO     | __main__:generate_statistical_insights:151 - Coefficient of Variation in weekday sales: 0.44
+2025-04-17 22:13:15.709 | INFO     | __main__:generate_statistical_insights:162 - Most consistent region: North (StdDev = 895.45)
+2025-04-17 22:13:15.710 | INFO     | __main__:main:188 - Full analysis and visualization completed.
+2025-04-17 22:13:15.734 | INFO     | __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 22:13:15.738 | INFO     | __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 22:13:15.746 | INFO     | __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
+2025-04-17 22:13:15.956 | INFO     | __main__:visualize_sales_by_weekday_and_product:74 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
+2025-04-17 22:13:16.053 | INFO     | __main__:main:94 - Analysis and visualization completed successfully.

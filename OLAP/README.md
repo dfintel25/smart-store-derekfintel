@@ -3,17 +3,31 @@
 #### Contact: s542635@youremail; 555-abc-1234
 
 ### Project Intro
-This project designs and implements a data warehouse structure that optimizes data retrieval and scalability. This involves creating a well-organized database using concepts like dimensional modeling and implementing it in a way that supports both current and future needs. The design process ensures that data from various sources is consolidated into a unified format that is easy to query and analyze.
+This README covers an overiew of a brief OLAP (Online Analytical Processing) project. 
 
 ### Preliminary Setup Steps
 ### 1. The Business Goal
 ```
-1. Clearly state the exact question being addressed and why it matters.
+For this project we wanted to access specific tables within our 'smart_sales.db' to generate business insights pertinent to supporting potential advertising and product development strategies. 
+
+In particular, we sought to leverage our tools to generate understandings of:
+- What are the total sales per day of the week?
+- What are the total sales per day of the PER a given region?
+- What are the total sales per day of a given product?
 ```
 ### 2. Data Source
 ```
 1. What information did you start with (prepared data, data warehouse, or pre-computed cube)?
 2. Clearly indicate which columns of which tables were used.
+We used two tables from our data warehouse, "Sales" and "Customers".
+
+For those tables, we utilized the following columns:
+** cube.columns: **
+[('DayOfWeek', ''), ('product_id', ''), ('customer_id', ''), ('region', ''), ('sale_amount', 'sum'), ('sale_amount', 'mean'), ('transaction_id', 'count'), ('region', 'count')]
+** explicit_columns: **
+['DayOfWeek', 'product_id', 'customer_id', 'region', 'sale_amount_sum', 'sale_amount_mean', 'transaction_id_count', 'transaction_id']
+
+len(cube.columns): 8
 ```
 ### 3. Tools
 ```

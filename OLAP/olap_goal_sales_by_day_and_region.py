@@ -146,7 +146,7 @@ def main():
     logger.info(f"Least profitable day: {least_profitable_day}")
     visualize_sales_by_weekday(sales_by_weekday)
 
-    # ✅ New analysis and visualizations
+    # Analysis and visualizations
     region_day_sales = analyze_sales_by_day_and_region(cube_df)
     visualize_sales_by_day_and_region(region_day_sales)
     visualize_region_heatmap(region_day_sales)
