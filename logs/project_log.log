@@ -1462,3 +1462,16 @@ dtype: int64
 2025-04-17 19:58:11.533 | INFO     | __main__:main:124 - Close the Figure to complete this script.
 2025-04-17 19:58:12.016 | INFO     | __main__:visualize_sales_by_weekday:104 - Visualization saved to data\results\sales_by_day_of_week.png.
 2025-04-17 19:58:34.790 | INFO     | __main__:main:128 - Analysis and visualization completed successfully.
+2025-04-17 20:09:48.057 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 20:09:48.060 | INFO     | __main__:load_olap_cube:48 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 20:09:48.061 | ERROR    | __main__:analyze_top_product_by_weekday:67 - Error analyzing top product by DayOfWeek: 'Column not found: sale_amount_usd_sum'
+2025-04-17 20:11:11.670 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 20:11:11.673 | INFO     | __main__:load_olap_cube:48 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 20:11:11.680 | INFO     | __main__:analyze_top_product_by_weekday:64 - Top products identified for each day of the week.
+2025-04-17 20:11:12.008 | INFO     | __main__:visualize_sales_by_weekday_and_product:101 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
+2025-04-17 20:12:13.273 | INFO     | __main__:main:121 - Analysis and visualization completed successfully.
+2025-04-17 20:25:01.959 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 20:25:01.963 | INFO     | __main__:load_olap_cube:48 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 20:25:01.968 | INFO     | __main__:analyze_top_product_by_weekday:64 - Top products identified for each day of the week.
+2025-04-17 20:25:02.293 | INFO     | __main__:visualize_sales_by_weekday_and_product:101 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
+2025-04-17 20:25:03.802 | INFO     | __main__:main:121 - Analysis and visualization completed successfully.
