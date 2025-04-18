@@ -17,14 +17,14 @@ In particular, we sought to leverage our tools to generate understandings of:
 ```
 ### 2. Data Source
 ```
-1. What information did you start with (prepared data, data warehouse, or pre-computed cube)?
-2. Clearly indicate which columns of which tables were used.
 We used two tables from our data warehouse, "Sales" and "Customers".
 
-For those tables, we utilized the following columns:
-** cube.columns: **
+From previous work we have established a data warehouse ('smart_sales.db') that has been built by intaking raw business data via CSV and performing various Python & SQL scripts that prep, scrub, and publish data. These programs were part of an ETL process that cleaned and transformed our datas, even to their table relationships and columns names. 
+
+For our analysis, we utilized the following columns:
+**cube.columns:**
 [('DayOfWeek', ''), ('product_id', ''), ('customer_id', ''), ('region', ''), ('sale_amount', 'sum'), ('sale_amount', 'mean'), ('transaction_id', 'count'), ('region', 'count')]
-** explicit_columns: **
+**explicit_columns:**
 ['DayOfWeek', 'product_id', 'customer_id', 'region', 'sale_amount_sum', 'sale_amount_mean', 'transaction_id_count', 'transaction_id']
 
 len(cube.columns): 8
