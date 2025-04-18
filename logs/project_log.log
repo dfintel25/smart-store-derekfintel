@@ -1475,3 +1475,37 @@ dtype: int64
 2025-04-17 20:25:01.968 | INFO     | __main__:analyze_top_product_by_weekday:64 - Top products identified for each day of the week.
 2025-04-17 20:25:02.293 | INFO     | __main__:visualize_sales_by_weekday_and_product:101 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
 2025-04-17 20:25:03.802 | INFO     | __main__:main:121 - Analysis and visualization completed successfully.
+2025-04-17 20:55:51.869 | INFO     | __main__:main:67 - Starting Customer OLAP Cubing process...
+2025-04-17 20:55:51.872 | ERROR    | __main__:ingest_customer_data_from_csv:24 - Error loading customer CSV: [Errno 2] No such file or directory: 'data\\raw\\customer.csv'
+2025-04-17 20:59:22.280 | INFO     | __main__:main:234 - Starting OLAP Cubing process...
+2025-04-17 20:59:22.282 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 20:59:22.284 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 20:59:22.301 | INFO     | __main__:create_olap_cube:188 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id']
+2025-04-17 20:59:22.306 | INFO     | __main__:write_cube_to_csv:227 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 20:59:22.310 | INFO     | __main__:main:262 - OLAP Cubing process completed successfully.
+2025-04-17 20:59:22.312 | INFO     | __main__:main:263 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 21:07:07.824 | INFO     | __main__:main:234 - Starting OLAP Cubing process...
+2025-04-17 21:07:07.827 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 21:07:07.829 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 21:07:07.847 | ERROR    | __main__:create_olap_cube:191 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 6 elements
+2025-04-17 21:08:12.317 | INFO     | __main__:main:235 - Starting OLAP Cubing process...
+2025-04-17 21:08:12.320 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 21:08:12.321 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 21:08:12.335 | ERROR    | __main__:create_olap_cube:192 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 7 elements
+2025-04-17 21:08:43.038 | INFO     | __main__:main:236 - Starting OLAP Cubing process...
+2025-04-17 21:08:43.041 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-17 21:08:43.043 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-17 21:08:43.061 | INFO     | __main__:create_olap_cube:190 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
+2025-04-17 21:08:43.068 | INFO     | __main__:write_cube_to_csv:229 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 21:08:43.070 | INFO     | __main__:main:265 - OLAP Cubing process completed successfully.
+2025-04-17 21:08:43.071 | INFO     | __main__:main:266 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 21:13:54.596 | INFO     | __main__:main:140 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-17 21:13:54.599 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 21:13:54.603 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-17 21:13:54.606 | INFO     | __main__:identify_least_profitable_day:63 - Least profitable day: Friday with revenue $8617.76.
+2025-04-17 21:13:54.606 | INFO     | __main__:main:146 - Least profitable day: Friday
+2025-04-17 21:13:54.890 | INFO     | __main__:visualize_sales_by_weekday:88 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-17 21:14:04.447 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-17 21:14:04.779 | INFO     | __main__:visualize_sales_by_day_and_region:110 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-17 21:14:09.150 | INFO     | __main__:visualize_region_heatmap:132 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-17 21:14:12.984 | INFO     | __main__:main:154 - Full analysis and visualization completed.

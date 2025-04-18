@@ -8,38 +8,36 @@ This project designs and implements a data warehouse structure that optimizes da
 ### Preliminary Setup Steps
 ### 1. The Business Goal
 ```
-1. Click "New Repository"
-    a. Generate name with no spaces
-    b. Add a "README.md"
-2. Clone Repository to machine via VS Code
-    a. Create folder in "C:\Projects"
-3. Install requirements.txt
-4. Setup gitignore
-5. Test example scripts in .venv
+1. Clearly state the exact question being addressed and why it matters.
 ```
 ### 2. Data Source
 ```
-py -m venv .venv
-.venv\Scripts\Activate
-py -m pip install --upgrade pip 
-py -m pip install -r requirements.txt
+1. What information did you start with (prepared data, data warehouse, or pre-computed cube)?
+2. Clearly indicate which columns of which tables were used.
 ```
 ### 3. Tools
 ```
-git add .
-git clone "urlexample.git"
-git commit -m "add .gitignore, cmds to readme"
-git push -u origin main
+1. Tell us what tools you used and why.
 ```
 ### 4. Workflow & Logic
 ```
-1. Click "Use this template" on this example repository (if it's not a template, click "Fork" instead).
-2. Clone the repository to your machine:
-   git clone example-repo-url
-3. Open your new cloned repository in VS Code.
+1. Describe the dimensions and aggregations - the logic needed for your analysis
+2. If using a graphical tool like Power BI or Tableau Prep, use screenshots to show your work. 
 ```
 ### 5. Results
+```
+1. Present your insights with narrative and visualizations.
+
+2. Explain any suggested actions based on the results you uncovered.
+```
 
 ### 6. Suggested Business Action
+```
+1. What actions are recommended based on your work
+
+```
 
 ### 7. Challenges
+```
+1. Mention any challenges you encountered and how they were resolved.
+```
