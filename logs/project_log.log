@@ -1509,3 +1509,8 @@ dtype: int64
 2025-04-17 21:14:04.779 | INFO     | __main__:visualize_sales_by_day_and_region:110 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
 2025-04-17 21:14:09.150 | INFO     | __main__:visualize_region_heatmap:132 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
 2025-04-17 21:14:12.984 | INFO     | __main__:main:154 - Full analysis and visualization completed.
+2025-04-17 21:48:08.685 | INFO     | __main__:main:110 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2025-04-17 21:48:08.690 | INFO     | __main__:load_olap_cube:48 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 21:48:08.696 | INFO     | __main__:analyze_top_product_by_weekday:64 - Top products identified for each day of the week.
+2025-04-17 21:48:09.039 | INFO     | __main__:visualize_sales_by_weekday_and_product:101 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
+2025-04-17 21:48:19.127 | INFO     | __main__:main:121 - Analysis and visualization completed successfully.

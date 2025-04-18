@@ -42,7 +42,7 @@ def analyze_sales_by_weekday(cube_df: pd.DataFrame) -> pd.DataFrame:
         raise
 
 
-# ✅ NEW: Analyze sales by DayOfWeek and Region
+# Analyze sales by DayOfWeek and Region
 def analyze_sales_by_day_and_region(cube_df: pd.DataFrame) -> pd.DataFrame:
     try:
         region_day_sales = (
@@ -92,7 +92,7 @@ def visualize_sales_by_weekday(sales_by_weekday: pd.DataFrame) -> None:
         raise
 
 
-# ✅ NEW: Visualize region sales stacked by weekday
+# Visualize region sales stacked by weekday
 def visualize_sales_by_day_and_region(region_day_sales: pd.DataFrame) -> None:
     try:
         pivot_df = region_day_sales.pivot(index="DayOfWeek", columns="region", values="sale_amount_sum")
@@ -114,7 +114,7 @@ def visualize_sales_by_day_and_region(region_day_sales: pd.DataFrame) -> None:
         raise
 
 
-# ✅ NEW: Heatmap for Region vs DayOfWeek
+# Heatmap for Region vs DayOfWeek
 def visualize_region_heatmap(region_day_sales: pd.DataFrame) -> None:
     try:
         heatmap_data = region_day_sales.pivot(index="region", columns="DayOfWeek", values="sale_amount_sum")
