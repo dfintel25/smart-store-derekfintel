@@ -1451,3 +1451,14 @@ dtype: int64
 2025-04-17 19:53:41.641 | INFO     | __main__:write_cube_to_csv:215 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
 2025-04-17 19:53:41.642 | INFO     | __main__:main:247 - OLAP Cubing process completed successfully.
 2025-04-17 19:53:41.647 | INFO     | __main__:main:248 - Please see outputs in data\olap_cubing_outputs
+2025-04-17 19:55:39.113 | INFO     | __main__:main:113 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-17 19:55:39.122 | INFO     | __main__:load_olap_cube:50 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 19:55:39.124 | ERROR    | __main__:analyze_sales_by_weekday:69 - Error analyzing sales by DayOfWeek: 'Column not found: sale_amount_usd_sum'
+2025-04-17 19:58:11.516 | INFO     | __main__:main:113 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-17 19:58:11.523 | INFO     | __main__:load_olap_cube:50 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-17 19:58:11.532 | INFO     | __main__:analyze_sales_by_weekday:66 - Sales aggregated by DayOfWeek successfully.
+2025-04-17 19:58:11.533 | INFO     | __main__:identify_least_profitable_day:77 - Least profitable day: Friday with revenue $8617.76.
+2025-04-17 19:58:11.533 | INFO     | __main__:main:123 - Least profitable day: Friday
+2025-04-17 19:58:11.533 | INFO     | __main__:main:124 - Close the Figure to complete this script.
+2025-04-17 19:58:12.016 | INFO     | __main__:visualize_sales_by_weekday:104 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-17 19:58:34.790 | INFO     | __main__:main:128 - Analysis and visualization completed successfully.

@@ -17,7 +17,7 @@ Sum SaleAmount for each day.
 Identify the day with the lowest total revenue.
 
 This example assumes a cube data set with the following column names (yours will differ).
-DayOfWeek,product_id,customer_id,sale_amount_usd_sum,sale_amount_usd_mean,sale_id_count,sale_ids
+DayOfWeek,product_id,customer_id,sale_amount_sum,sale_amount_usd_mean,sale_id_count,sale_ids
 Friday,101,1001,6344.96,6344.96,1,[582]
 etc.
 """
@@ -59,9 +59,9 @@ def analyze_sales_by_weekday(cube_df: pd.DataFrame) -> pd.DataFrame:
     try:
         # Group by DayOfWeek and sum the sales
         sales_by_weekday = (
-            cube_df.groupby("DayOfWeek")["sale_amount_usd_sum"].sum().reset_index()
+            cube_df.groupby("DayOfWeek")["sale_amount_sum"].sum().reset_index()
         )
-        sales_by_weekday.rename(columns={"sale_amount_usd_sum": "TotalSales"}, inplace=True)
+        sales_by_weekday.rename(columns={"sale_amount_sum": "TotalSales"}, inplace=True)
         sales_by_weekday.sort_values(by="TotalSales", inplace=True)
         logger.info("Sales aggregated by DayOfWeek successfully.")
         return sales_by_weekday
