@@ -91,9 +91,19 @@ Our last major codeset utilized a similar functional set as Codeset #2 but focus
 ### 5. Results
 
 1. Present your insights with narrative and visualizations.
+
+
+![sales_by_day_of_week](image-2.png)
+
 ![sales_by_day_and_product](image.png)
 
-2. Explain any suggested actions based on the results you uncovered.
+![sales_by_day_and_region_stacked](image-1.png)
+
+![sales_heatmap_by_region_and_day](image-3.png)
+
+
+
+1. Explain any suggested actions based on the results you uncovered.
 
 
 ### 6. Suggested Business Action
