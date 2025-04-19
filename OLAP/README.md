@@ -115,11 +115,11 @@ Our last visual gives a heatmap of sales per region and day of the week. It prov
 
 1) All products should be analyzed for profit ratio and investigated for: 
    1) What is an acceptable discount to run?
-   2) What are it's competitive brands and options?.
+   2) What are it's competitive brands and options?
    
 2) Advertising analysis should be done across the product types to understand customer demographics and shopping platforms.
     1) Where are customers purchasing our products from?
-    2) What advertisements are currently being ran, and their costs?
+    2) What advertisements are currently being ran and their costs?
 
 3) Following the advertisement analysis, that data should be complimented with investigating the demographic trends per customer region. 
 
