@@ -90,28 +90,49 @@ Our last major codeset utilized a similar functional set as Codeset #2 but focus
 
 ### 5. Results
 
-1. Present your insights with narrative and visualizations.
+For our results, will walk through our summary findings and detail insights rendered from our visualizations. 
 
+First, we find that Mondays, Wednesdays, and Thursdays have the strongest sales per week. 
 
 ![sales_by_day_of_week](image-2.png)
 
+Next, we see that Product "101" has consistent and substantial sales to that of others. Products "104" and "107" trail but are still significantly less than "101".
+
 ![sales_by_day_and_product](image.png)
 
+Our region analysis provided some interesting observations where "East" was consistently strong followed by "South", "West", and "North" with the least. 
+
 ![sales_by_day_and_region_stacked](image-1.png)
+
+Our last visual gives a heatmap of sales per region and day of the week. It provides a nice summary view where we see that sales are highest in our "East" region on Thursday's and seconded by "South" on Monday's.
 
 ![sales_heatmap_by_region_and_day](image-3.png)
 
 
-
-1. Explain any suggested actions based on the results you uncovered.
-
-
 ### 6. Suggested Business Action
 
-1. What actions are recommended based on your work
+**BLUF:** To sustain growth and increase competitive reach, I suggest a series of quick analyses and activities to support further product development & advertisement criteria. 
 
+1) All products should be analyzed for profit ratio and investigated for: 
+   1) What is an acceptable discount to run?
+   2) What are it's competitive brands and options?.
+   
+2) Advertising analysis should be done across the product types to understand customer demographics and shopping platforms.
+    1) Where are customers purchasing our products from?
+    2) What advertisements are currently being ran, and their costs?
 
+3) Following the advertisement analysis, that data should be complimented with investigating the demographic trends per customer region. 
+
+4) Once these data pillars are established, the company should commission the development of Machine Learning functions to perform predictive analytics of the criteria above, over given out-years and fiscal quarters. 
+
+5) Lastly, the team developing these constructs should be tasked with finalizing their product in a web-based dashboard  where stakeholders are given convenient access and can query their own strategic interests. 
 
 ### 7. Challenges
 
-1. Mention any challenges you encountered and how they were resolved.
+Overall, this project went fairly smoothly. I needed to adjsut some of my column names and add additional functions to reference multiple tables in the data warehouse but otherwise everything worked without a hitch. 
+
+Thank you for taking the time to review this project. Should you have any questions, collaborative interests, or inquiries, please connect with me.
+
+Cheers,
+
+-Derek Fintel
