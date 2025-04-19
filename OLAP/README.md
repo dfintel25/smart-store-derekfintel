@@ -48,13 +48,13 @@ To support our investigation, we had to first retrieve and cube our desired dime
 
 **Example:**
 
-| __main__:main:149 - Starting OLAP Cubing process...
-| __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
-| __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
-| __main__:create_olap_cube:103 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
-| __main__:write_cube_to_csv:142 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
-| __main__:main:178 - OLAP Cubing process completed successfully.
-| __main__:main:179 - Please see outputs in data\olap_cubing_outputs
+1. __main__:main:149 - Starting OLAP Cubing process...
+2. __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
+3. __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
+4. __main__:create_olap_cube:103 - OLAP cube created with dimensions: ['DayOfWeek', 'product_id', 'customer_id', 'region']
+5. __main__:write_cube_to_csv:142 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+6. __main__:main:178 - OLAP Cubing process completed successfully.
+7. __main__:main:179 - Please see outputs in data\olap_cubing_outputs
 
 **Codeset #2:** *olap_goal_sales_by_day_and_region.py*
 
@@ -62,12 +62,12 @@ Our next program retrieved our newly cubed data and began performing analysis & 
 
 **Example:**
 
-| __main__:main:172 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
-| __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
-| __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
-| __main__:identify_least_profitable_day:57 - Least profitable day: Friday with revenue $8617.76.
-| __main__:main:178 - Least profitable day: Friday
-| __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
+1. __main__:main:172 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2. __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+3. __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
+4. __main__:identify_least_profitable_day:57 - Least profitable day: Friday with revenue $8617.76.
+5. __main__:main:178 - Least profitable day: Friday
+6. __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
 
 **Codeset #3:** *olap_goal_top_product_by_day.py*
 
@@ -75,9 +75,9 @@ Our last major codeset utilized a similar functional set as Codeset #2 but focus
 
 **Example:**
 
-| __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
-| __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
-| __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
+1. __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
+2. __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+3. __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
     DayOfWeek  product_id  TotalSales
 0      Friday         101     6344.96
 6      Monday         101    19828.00
