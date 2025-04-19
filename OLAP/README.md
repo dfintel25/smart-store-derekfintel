@@ -42,10 +42,12 @@ See below for a list of imports:
 
 ### 4. Workflow & Logic
 
-Codeset #1: *olap_cubing_customer.py*
+**Codeset #1:** *olap_cubing_customer.py*
+
 To support our investigation, we had to first retrieve and cube our desired dimensions. We started by ingesting data from both the "Sales" and "Customer" tables. We then selected specific columns for cubing (referenced above), and applide some time-based dimensions to them. Our code then wrote this compilation to our data folder via CSV. 
 
-Example:
+**Example:**
+
 | __main__:main:149 - Starting OLAP Cubing process...
 | __main__:ingest_sales_data_from_dw:26 - Sales data successfully loaded from SQLite data warehouse.
 | __main__:ingest_customer_data_from_dw:38 - Customer data successfully loaded from SQLite data warehouse.
@@ -54,10 +56,12 @@ Example:
 | __main__:main:178 - OLAP Cubing process completed successfully.
 | __main__:main:179 - Please see outputs in data\olap_cubing_outputs
 
-Codeset #2: *olap_goal_sales_by_day_and_region.py*
+**Codeset #2:** *olap_goal_sales_by_day_and_region.py*
+
 Our next program retrieved our newly cubed data and began performing analysis & visualizations. Our code ran multiple functions that *sorted weekday sales*, *summed sales per region*, and *identified the least profitable day*.
 
-Example:
+**Example:**
+
 | __main__:main:172 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
 | __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
 | __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
@@ -65,10 +69,12 @@ Example:
 | __main__:main:178 - Least profitable day: Friday
 | __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
 
-Codeset #3: *olap_goal_top_product_by_day.py*
+**Codeset #3:** *olap_goal_top_product_by_day.py*
+
 Our last major codeset utilized a similar functional set as Codeset #2 but focused on grouping the values within our cubes and sorting them by "product_id". 
 
-Example:
+**Example:**
+
 | __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
 | __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
 | __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
