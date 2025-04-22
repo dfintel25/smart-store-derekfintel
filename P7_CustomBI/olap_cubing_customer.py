@@ -128,6 +128,18 @@ def ingest_customer_data_from_dw() -> pd.DataFrame:
         logger.error(f"Error loading customer table data from data warehouse: {e}")
         raise
 
+def ingest_product_data_from_dw() -> pd.DataFrame:
+    """Ingest product data from SQLite data warehouse."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        product_df = pd.read_sql_query("SELECT * FROM product", conn)
+        conn.close()
+        logger.info("Product data successfully loaded from SQLite data warehouse.")
+        return product_df
+    except Exception as e:
+        logger.error(f"Error loading product table data from data warehouse: {e}")
+        raise
+
 
 def create_olap_cube(
     sales_df: pd.DataFrame, dimensions: list, metrics: dict
@@ -170,15 +182,17 @@ def create_olap_cube(
         explicit_columns = generate_column_names(dimensions, metrics)
         explicit_columns.append("transaction_id")  # Include the traceability column
         explicit_columns = [
-        'DayOfWeek',
-        'product_id',
-        'customer_id',
-        'region',
-        'sale_amount_sum',
-        'sale_amount_mean',
-        'transaction_id_count',
-        'transaction_id'
+        "DayOfWeek",
+        "product_id",
+        "customer_id",
+        "region",
+        "category",
+        "sale_amount_sum",
+        "sale_amount_mean",
+        "transaction_id_count",
+        "transaction_id",
         ]
+
 
         print("cube.columns:", cube.columns.tolist())
         print("explicit_columns:", explicit_columns)
@@ -238,9 +252,11 @@ def main():
     # Step 1: Ingest data
     sales_df = ingest_sales_data_from_dw()
     customer_df = ingest_customer_data_from_dw()
-
+    product_df = ingest_product_data_from_dw()
+    
     # Step 2: Enrich sales data with customer info
     sales_df = sales_df.merge(customer_df, on="customer_id", how="left")
+    sales_df = sales_df.merge(product_df, on="product_id", how="left")
 
     # Step 3: Add time-based dimensions
     sales_df["sale_date"] = pd.to_datetime(sales_df["sale_date"])

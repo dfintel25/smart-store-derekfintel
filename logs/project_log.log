@@ -1582,3 +1582,18 @@ Name: TotalSales, dtype: float64
 2025-04-17 22:13:15.746 | INFO     | __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
 2025-04-17 22:13:15.956 | INFO     | __main__:visualize_sales_by_weekday_and_product:74 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
 2025-04-17 22:13:16.053 | INFO     | __main__:main:94 - Analysis and visualization completed successfully.
+2025-04-21 20:09:41.801 | INFO     | __main__:main:250 - Starting OLAP Cubing process...
+2025-04-21 20:09:41.806 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 20:09:41.807 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 20:09:41.808 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 20:09:41.835 | ERROR    | __main__:create_olap_cube:207 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 9 elements
+2025-04-21 20:10:20.139 | INFO     | __main__:main:250 - Starting OLAP Cubing process...
+2025-04-21 20:10:20.140 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 20:10:20.141 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 20:10:20.142 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 20:10:20.153 | ERROR    | __main__:create_olap_cube:207 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 9 elements
+2025-04-21 20:12:47.357 | INFO     | __main__:main:250 - Starting OLAP Cubing process...
+2025-04-21 20:12:47.359 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 20:12:47.360 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 20:12:47.361 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 20:12:47.375 | ERROR    | __main__:create_olap_cube:207 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 9 elements
