@@ -1642,3 +1642,154 @@ Name: TotalSales, dtype: float64
 2025-04-21 21:21:02.880 | INFO     | __main__:write_cube_to_csv:210 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
 2025-04-21 21:21:02.880 | INFO     | __main__:main:247 - OLAP Cubing process completed successfully.
 2025-04-21 21:21:02.881 | INFO     | __main__:main:248 - Please see outputs in data\olap_cubing_outputs
+2025-04-21 21:56:48.080 | INFO     | __main__:main:177 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 21:56:48.084 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 21:56:48.086 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 21:56:48.086 | INFO     | __main__:identify_least_profitable_day:77 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 21:56:48.087 | INFO     | __main__:main:183 - Least profitable day: Friday
+2025-04-21 21:56:48.443 | INFO     | __main__:visualize_sales_by_weekday:125 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-21 21:56:50.606 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 21:56:50.860 | INFO     | __main__:visualize_sales_by_day_and_region:147 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 21:56:53.407 | INFO     | __main__:visualize_region_heatmap:169 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 21:56:55.116 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 21:56:55.317 | INFO     | __main__:visualize_category_sales_by_region:102 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 21:57:00.571 | INFO     | __main__:main:196 - Full analysis and visualization completed.
+2025-04-21 21:58:23.814 | INFO     | __main__:main:177 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 21:58:23.817 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 21:58:23.819 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 21:58:23.820 | INFO     | __main__:identify_least_profitable_day:77 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 21:58:23.822 | INFO     | __main__:main:183 - Least profitable day: Friday
+2025-04-21 21:58:24.076 | INFO     | __main__:visualize_sales_by_weekday:125 - Visualization saved to data\results\sales_by_day_of_week.png.
+2025-04-21 21:58:31.658 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 21:58:32.046 | INFO     | __main__:visualize_sales_by_day_and_region:147 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 21:58:35.934 | INFO     | __main__:visualize_region_heatmap:169 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 21:58:37.564 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 21:58:37.814 | INFO     | __main__:visualize_category_sales_by_region:102 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 21:58:39.457 | INFO     | __main__:main:196 - Full analysis and visualization completed.
+2025-04-21 21:59:46.235 | INFO     | __main__:main:190 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 21:59:46.239 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 21:59:46.241 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 21:59:46.241 | INFO     | __main__:identify_least_profitable_day:77 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 21:59:46.242 | INFO     | __main__:main:196 - Least profitable day: Friday
+2025-04-21 21:59:46.543 | INFO     | __main__:visualize_sales_by_weekday:139 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 21:59:55.478 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 21:59:55.781 | INFO     | __main__:visualize_sales_by_day_and_region:160 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 21:59:57.488 | INFO     | __main__:visualize_region_heatmap:182 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 21:59:59.051 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 21:59:59.259 | INFO     | __main__:visualize_category_sales_by_region:102 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:00:01.828 | INFO     | __main__:main:209 - Full analysis and visualization completed.
+2025-04-21 22:02:34.202 | INFO     | __main__:main:190 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:02:34.205 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:02:34.207 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:02:34.207 | INFO     | __main__:identify_least_profitable_day:77 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:02:34.209 | INFO     | __main__:main:196 - Least profitable day: Friday
+2025-04-21 22:02:34.481 | INFO     | __main__:visualize_sales_by_weekday:139 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:02:43.454 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:02:43.798 | INFO     | __main__:visualize_sales_by_day_and_region:160 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:02:47.443 | INFO     | __main__:visualize_region_heatmap:182 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:02:49.911 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 22:02:50.149 | INFO     | __main__:visualize_category_sales_by_region:102 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:02:52.280 | INFO     | __main__:main:209 - Full analysis and visualization completed.
+2025-04-21 22:05:02.586 | INFO     | __main__:main:239 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:05:02.590 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:05:02.593 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:05:02.594 | INFO     | __main__:identify_least_profitable_day:100 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:05:02.596 | INFO     | __main__:main:245 - Least profitable day: Friday
+2025-04-21 22:05:02.900 | INFO     | __main__:visualize_sales_by_weekday:188 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:16:22.057 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:16:22.411 | INFO     | __main__:visualize_sales_by_day_and_region:209 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:16:24.914 | INFO     | __main__:visualize_region_heatmap:231 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:16:26.456 | ERROR    | __main__:analyze_sales_by_region_and_month:93 - Error analyzing sales by region and month: 'date'
+2025-04-21 22:20:13.076 | INFO     | __main__:main:217 - Starting OLAP Cubing process...
+2025-04-21 22:20:13.078 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 22:20:13.080 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 22:20:13.082 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 22:20:13.109 | INFO     | __main__:write_cube_to_csv:210 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:20:13.109 | INFO     | __main__:main:247 - OLAP Cubing process completed successfully.
+2025-04-21 22:20:13.110 | INFO     | __main__:main:248 - Please see outputs in data\olap_cubing_outputs
+2025-04-21 22:21:36.725 | INFO     | __main__:main:239 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:21:36.729 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:21:36.732 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:21:36.732 | INFO     | __main__:identify_least_profitable_day:100 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:21:36.733 | INFO     | __main__:main:245 - Least profitable day: Friday
+2025-04-21 22:21:37.024 | INFO     | __main__:visualize_sales_by_weekday:188 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:21:38.677 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:21:38.928 | INFO     | __main__:visualize_sales_by_day_and_region:209 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:21:40.844 | INFO     | __main__:visualize_region_heatmap:231 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:21:42.309 | ERROR    | __main__:analyze_sales_by_region_and_month:93 - Error analyzing sales by region and month: 'date'
+2025-04-21 22:24:02.905 | INFO     | __main__:main:290 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:24:02.908 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:24:02.910 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:24:02.911 | INFO     | __main__:identify_least_profitable_day:118 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:24:02.912 | INFO     | __main__:main:296 - Least profitable day: Friday
+2025-04-21 22:24:03.170 | INFO     | __main__:visualize_sales_by_weekday:206 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:24:06.874 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:24:07.103 | INFO     | __main__:visualize_sales_by_day_and_region:260 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:24:09.000 | INFO     | __main__:visualize_region_heatmap:282 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:24:10.423 | ERROR    | __main__:analyze_sales_by_region_and_month:93 - Error analyzing sales by region and month: 'date'
+2025-04-21 22:27:14.598 | INFO     | __main__:main:290 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:27:14.601 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:27:14.603 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:27:14.604 | INFO     | __main__:identify_least_profitable_day:118 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:27:14.605 | INFO     | __main__:main:296 - Least profitable day: Friday
+2025-04-21 22:27:14.960 | INFO     | __main__:visualize_sales_by_weekday:206 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:27:16.185 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:27:16.416 | INFO     | __main__:visualize_sales_by_day_and_region:260 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:27:17.912 | INFO     | __main__:visualize_region_heatmap:282 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:27:18.983 | INFO     | __main__:analyze_sales_by_region_and_month:90 - Sales by region and month successfully aggregated.
+2025-04-21 22:27:19.335 | INFO     | __main__:visualize_sales_by_region_and_month:168 - Sales by region over months chart saved to data\results\sales_by_region_over_months.png.
+2025-04-21 22:27:51.568 | INFO     | __main__:analyze_sales_by_category_and_month:108 - Sales by category and month successfully aggregated.
+2025-04-21 22:27:51.859 | INFO     | __main__:visualize_sales_by_category_and_month:239 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+2025-04-21 22:28:00.628 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 22:28:00.880 | INFO     | __main__:visualize_category_sales_by_region:143 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:28:02.637 | INFO     | __main__:main:319 - Full analysis and visualization completed.
+2025-04-21 22:28:17.720 | INFO     | __main__:main:290 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:28:17.723 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:28:17.726 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:28:17.726 | INFO     | __main__:identify_least_profitable_day:118 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:28:17.726 | INFO     | __main__:main:296 - Least profitable day: Friday
+2025-04-21 22:28:17.982 | INFO     | __main__:visualize_sales_by_weekday:206 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:28:22.253 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:28:22.532 | INFO     | __main__:visualize_sales_by_day_and_region:260 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:28:25.668 | INFO     | __main__:visualize_region_heatmap:282 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:28:27.940 | INFO     | __main__:analyze_sales_by_region_and_month:90 - Sales by region and month successfully aggregated.
+2025-04-21 22:28:28.289 | INFO     | __main__:visualize_sales_by_region_and_month:168 - Sales by region over months chart saved to data\results\sales_by_region_over_months.png.
+2025-04-21 22:28:38.848 | INFO     | __main__:analyze_sales_by_category_and_month:108 - Sales by category and month successfully aggregated.
+2025-04-21 22:28:39.162 | INFO     | __main__:visualize_sales_by_category_and_month:239 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+2025-04-21 22:29:03.306 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 22:29:03.639 | INFO     | __main__:visualize_category_sales_by_region:143 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:29:07.904 | INFO     | __main__:main:319 - Full analysis and visualization completed.
+2025-04-21 22:30:15.075 | INFO     | __main__:main:290 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:30:15.078 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:30:15.080 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:30:15.080 | INFO     | __main__:identify_least_profitable_day:118 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:30:15.082 | INFO     | __main__:main:296 - Least profitable day: Friday
+2025-04-21 22:30:15.386 | INFO     | __main__:visualize_sales_by_weekday:206 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:30:17.786 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:30:18.033 | INFO     | __main__:visualize_sales_by_day_and_region:260 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:30:19.776 | INFO     | __main__:visualize_region_heatmap:282 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:30:21.524 | INFO     | __main__:analyze_sales_by_region_and_month:90 - Sales by region and month successfully aggregated.
+2025-04-21 22:30:21.817 | INFO     | __main__:visualize_sales_by_region_and_month:168 - Sales by region over months chart saved to data\results\sales_by_region_over_months.png.
+2025-04-21 22:30:29.027 | INFO     | __main__:analyze_sales_by_category_and_month:108 - Sales by category and month successfully aggregated.
+2025-04-21 22:30:29.373 | INFO     | __main__:visualize_sales_by_category_and_month:239 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+2025-04-21 22:30:35.599 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 22:30:35.792 | INFO     | __main__:visualize_category_sales_by_region:143 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:30:38.012 | INFO     | __main__:main:319 - Full analysis and visualization completed.
+2025-04-21 22:32:16.561 | INFO     | __main__:main:330 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
+2025-04-21 22:32:16.564 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 22:32:16.567 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-21 22:32:16.567 | INFO     | __main__:identify_least_profitable_day:138 - Least profitable day: Friday with revenue $8617.76.
+2025-04-21 22:32:16.567 | INFO     | __main__:main:336 - Least profitable day: Friday
+2025-04-21 22:32:16.812 | INFO     | __main__:visualize_sales_by_weekday:226 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-21 22:32:18.353 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-21 22:32:18.664 | INFO     | __main__:visualize_sales_by_day_and_region:300 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-21 22:32:20.195 | INFO     | __main__:visualize_region_heatmap:322 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-21 22:32:21.248 | INFO     | __main__:analyze_sales_by_region_and_month:90 - Sales by region and month successfully aggregated.
+2025-04-21 22:32:21.568 | INFO     | __main__:visualize_sales_by_region_and_month:188 - Sales by region over months chart saved to data\results\sales_by_region_over_months.png.
+2025-04-21 22:32:25.048 | INFO     | __main__:analyze_sales_by_category_and_month:128 - Sales by category and month successfully aggregated.
+2025-04-21 22:32:25.311 | INFO     | __main__:visualize_sales_by_category_and_month:279 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+2025-04-21 22:32:26.452 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-21 22:32:26.655 | INFO     | __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-21 22:32:28.203 | INFO     | __main__:analyze_category_sales_by_region_and_month:109 - Monthly sales for category 'Electronics' by region successfully aggregated.
+2025-04-21 22:32:28.436 | INFO     | __main__:visualize_category_sales_by_region_and_month:246 - Category sales trend chart by region and month saved to data\results\category_sales_by_region_monthly_Electronics.png.
+2025-04-21 22:32:46.669 | INFO     | __main__:main:364 - Full analysis and visualization completed.

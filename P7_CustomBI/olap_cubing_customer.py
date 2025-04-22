@@ -232,7 +232,7 @@ def main():
     sales_df["Year"] = sales_df["sale_date"].dt.year
 
     # Step 4: Define cube structure
-    dimensions = ["DayOfWeek", "product_id", "customer_id", "region", "category"]
+    dimensions = ["sale_date", "DayOfWeek", "product_id", "customer_id", "region", "category"]
     metrics = {
         "sale_amount": ["sum", "mean"],
         "transaction_id": "count",
