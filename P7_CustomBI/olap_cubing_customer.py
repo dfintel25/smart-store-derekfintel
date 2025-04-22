@@ -144,68 +144,35 @@ def ingest_product_data_from_dw() -> pd.DataFrame:
 def create_olap_cube(
     sales_df: pd.DataFrame, dimensions: list, metrics: dict
 ) -> pd.DataFrame:
-    """
-    Create an OLAP cube by aggregating data across multiple dimensions.
-
-    Args:
-        sales_df (pd.DataFrame): The sales data.
-        dimensions (list): List of column names to group by.
-        metrics (dict): Dictionary of aggregation functions for metrics.
-
-    Returns:
-        pd.DataFrame: The multidimensional OLAP cube.
-    """
     try:
-        # Group by the specified dimensions and aggregate metrics
-        # When we use the groupby() method in Pandas, 
-        # it creates a hierarchical index (also known as a MultiIndex) for the grouped data. 
-        # This structure reflects the grouping levels but can make the resulting DataFrame 
-        # harder to interact with, especially for tasks like slicing, querying, or merging data. 
-        # Converting the hierarchical index into a flat table by calling reset_index()
-        # simplifies our operations.
-
-        # NOTE: Pandas generates hierarchical column names when we specify 
-        # multiple aggregation functions for a single column. 
-        # If we specify only one aggregation function per column, 
-        # the resulting column names will not include the suffix.
-
-        # Group by the specified dimensions
         grouped = sales_df.groupby(dimensions)
-
-        # Perform the aggregations
         cube = grouped.agg(metrics).reset_index()
 
-        # Add a list of sale IDs for traceability
+        # Flatten column names if it's a MultiIndex
+        if isinstance(cube.columns, pd.MultiIndex):
+            cube.columns = ['_'.join(col).strip('_') for col in cube.columns]
+
+        # Add transaction_id list column BEFORE the length check
         cube["transaction_id"] = grouped["transaction_id"].apply(list).reset_index(drop=True)
 
         # Generate explicit column names
         explicit_columns = generate_column_names(dimensions, metrics)
-        explicit_columns.append("transaction_id")  # Include the traceability column
-        explicit_columns = [
-        "DayOfWeek",
-        "product_id",
-        "customer_id",
-        "region",
-        "category",
-        "sale_amount_sum",
-        "sale_amount_mean",
-        "transaction_id_count",
-        "transaction_id",
-        ]
+        explicit_columns.append("transaction_id")  # Always add it manually
 
-
-        print("cube.columns:", cube.columns.tolist())
-        print("explicit_columns:", explicit_columns)
-        print("len(cube.columns):", len(cube.columns))
-        print("len(explicit_columns):", len(explicit_columns))
+        # Check length match before assigning
+        if len(cube.columns) != len(explicit_columns):
+            logger.error(f"Column length mismatch: cube has {len(cube.columns)}, expected {len(explicit_columns)}")
+            raise ValueError("Mismatch between actual and expected column names.")
 
         cube.columns = explicit_columns
 
-        logger.info(f"OLAP cube created with dimensions: {dimensions}")
         return cube
+
     except Exception as e:
-        logger.error(f"Error creating OLAP cube: {e}")
+        logger.error(f"Error during OLAP cube creation: {e}")
         raise
+
+
 
 def generate_column_names(dimensions: list, metrics: dict) -> list:
     """
@@ -265,11 +232,10 @@ def main():
     sales_df["Year"] = sales_df["sale_date"].dt.year
 
     # Step 4: Define cube structure
-    dimensions = ["DayOfWeek", "product_id", "customer_id", "region"]
+    dimensions = ["DayOfWeek", "product_id", "customer_id", "region", "category"]
     metrics = {
         "sale_amount": ["sum", "mean"],
         "transaction_id": "count",
-        "region": "count",
     }
 
     # Step 5: Create cube

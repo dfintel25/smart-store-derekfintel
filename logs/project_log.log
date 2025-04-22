@@ -1597,3 +1597,48 @@ Name: TotalSales, dtype: float64
 2025-04-21 20:12:47.360 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
 2025-04-21 20:12:47.361 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
 2025-04-21 20:12:47.375 | ERROR    | __main__:create_olap_cube:207 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 9 elements
+2025-04-21 20:46:12.124 | INFO     | __main__:main:250 - Starting OLAP Cubing process...
+2025-04-21 20:46:12.131 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 20:46:12.133 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 20:46:12.135 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 20:46:12.187 | ERROR    | __main__:create_olap_cube:207 - Error creating OLAP cube: Length mismatch: Expected axis has 8 elements, new values have 9 elements
+2025-04-21 20:51:50.542 | INFO     | __main__:main:249 - Starting OLAP Cubing process...
+2025-04-21 20:51:50.545 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 20:51:50.546 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 20:51:50.547 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 20:51:50.568 | ERROR    | __main__:create_olap_cube:206 - Error creating OLAP cube: Length mismatch: Expected axis has 10 elements, new values have 11 elements
+2025-04-21 21:00:57.534 | INFO     | __main__:main:253 - Starting OLAP Cubing process...
+2025-04-21 21:00:57.537 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:00:57.538 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:00:57.539 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:00:57.572 | ERROR    | __main__:create_olap_cube:210 - Error creating OLAP cube: Length mismatch: Expected axis has 10 elements, new values have 11 elements
+2025-04-21 21:07:04.419 | INFO     | __main__:main:208 - Starting OLAP Cubing process...
+2025-04-21 21:07:04.422 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:07:04.423 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:07:04.425 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:07:04.442 | ERROR    | __main__:create_olap_cube:164 - Error creating OLAP cube: Length mismatch: Expected axis has 10 elements, new values have 11 elements
+2025-04-21 21:13:18.055 | INFO     | __main__:main:215 - Starting OLAP Cubing process...
+2025-04-21 21:13:18.059 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:13:18.060 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:13:18.062 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:13:18.089 | ERROR    | __main__:create_olap_cube:164 - Column length mismatch: cube has 10, expected 11
+2025-04-21 21:13:18.089 | ERROR    | __main__:create_olap_cube:171 - Error during OLAP cube creation: Mismatch between actual and expected column names.
+2025-04-21 21:18:00.560 | INFO     | __main__:main:215 - Starting OLAP Cubing process...
+2025-04-21 21:18:00.562 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:18:00.564 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:18:00.566 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:18:00.588 | ERROR    | __main__:create_olap_cube:164 - Column length mismatch: cube has 8, expected 9
+2025-04-21 21:18:00.589 | ERROR    | __main__:create_olap_cube:171 - Error during OLAP cube creation: Mismatch between actual and expected column names.
+2025-04-21 21:19:54.212 | INFO     | __main__:main:217 - Starting OLAP Cubing process...
+2025-04-21 21:19:54.215 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:19:54.217 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:19:54.219 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:19:54.245 | ERROR    | __main__:create_olap_cube:164 - Column length mismatch: cube has 8, expected 9
+2025-04-21 21:19:54.246 | ERROR    | __main__:create_olap_cube:172 - Error during OLAP cube creation: Mismatch between actual and expected column names.
+2025-04-21 21:21:02.852 | INFO     | __main__:main:217 - Starting OLAP Cubing process...
+2025-04-21 21:21:02.854 | INFO     | __main__:ingest_sales_data_from_dw:113 - Sales data successfully loaded from SQLite data warehouse.
+2025-04-21 21:21:02.856 | INFO     | __main__:ingest_customer_data_from_dw:125 - Customer data successfully loaded from SQLite data warehouse.
+2025-04-21 21:21:02.857 | INFO     | __main__:ingest_product_data_from_dw:137 - Product data successfully loaded from SQLite data warehouse.
+2025-04-21 21:21:02.880 | INFO     | __main__:write_cube_to_csv:210 - OLAP cube saved to data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-21 21:21:02.880 | INFO     | __main__:main:247 - OLAP Cubing process completed successfully.
+2025-04-21 21:21:02.881 | INFO     | __main__:main:248 - Please see outputs in data\olap_cubing_outputs
