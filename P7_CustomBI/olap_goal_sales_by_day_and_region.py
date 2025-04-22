@@ -325,7 +325,174 @@ def visualize_region_heatmap(region_day_sales: pd.DataFrame) -> None:
         logger.error(f"Error generating heatmap: {e}")
         raise
 
+#Test1
+def visualize_all_categories_sales_by_region_and_month(cube_df: pd.DataFrame) -> None:
+    try:
+        df = cube_df.copy()
+        df['sale_date'] = pd.to_datetime(df['sale_date'])
+        df['month'] = df['sale_date'].dt.to_period('M').astype(str)
 
+        grouped = (
+            df.groupby(['category', 'region', 'month'])['sale_amount_sum']
+            .sum()
+            .reset_index()
+            .rename(columns={'sale_amount_sum': 'TotalSales'})
+        )
+
+        # Create FacetGrid
+        g = sns.FacetGrid(grouped, col="category", col_wrap=3, height=4, sharey=False)
+        g.map_dataframe(sns.lineplot, x="month", y="TotalSales", hue="region", marker='o')
+        g.add_legend()
+        g.set_titles(col_template="{col_name}")
+        g.set_axis_labels("Month", "Total Sales (USD)")
+        for ax in g.axes.flatten():
+            for label in ax.get_xticklabels():
+                label.set_rotation(45)
+        plt.tight_layout()
+
+        output_path = RESULTS_OUTPUT_DIR.joinpath("category_sales_by_region_month_facet.png")
+        plt.savefig(output_path)
+        logger.info(f"Faceted category-region-month sales chart saved to {output_path}.")
+        plt.show()
+    except Exception as e:
+        logger.error(f"Error visualizing faceted category sales: {e}")
+        raise
+
+#Test2
+def visualize_category_sales_stacked_area(category_region_month_sales: pd.DataFrame, category: str) -> None:
+    try:
+        pivot_df = category_region_month_sales.pivot(index="month", columns="region", values="TotalSales")
+        pivot_df = pivot_df.fillna(0).astype(float)
+        pivot_df.index = pivot_df.index.astype(str)
+
+        pivot_df.plot.area(figsize=(12, 7), colormap='tab20', alpha=0.85)
+        plt.title(f"Stacked Area Chart: Monthly Sales by Region for Category '{category}'", fontsize=16)
+        plt.xlabel("Month")
+        plt.ylabel("Total Sales (USD)")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+
+        output_path = RESULTS_OUTPUT_DIR.joinpath(f"category_sales_stacked_area_{category}.png")
+        plt.savefig(output_path)
+        logger.info(f"Stacked area chart saved to {output_path}.")
+        plt.show()
+    except Exception as e:
+        logger.error(f"Error visualizing stacked area chart: {e}")
+        raise
+
+
+#Test3
+def visualize_category_region_month_heatmap(cube_df: pd.DataFrame, category: str) -> None:
+    try:
+        df = cube_df[cube_df["category"] == category].copy()
+        df['sale_date'] = pd.to_datetime(df['sale_date'])
+        df['month'] = df['sale_date'].dt.to_period('M').astype(str)
+
+        heat_df = (
+            df.groupby(['region', 'month'])['sale_amount_sum']
+            .sum()
+            .reset_index()
+            .pivot(index='region', columns='month', values='sale_amount_sum')
+            .fillna(0)
+        )
+
+        plt.figure(figsize=(12, 7))
+        sns.heatmap(heat_df, annot=True, fmt=".0f", cmap="YlGnBu", linewidths=0.5)
+        plt.title(f"Heatmap of Monthly Sales by Region for Category: {category}", fontsize=16)
+        plt.xlabel("Month")
+        plt.ylabel("Region")
+        plt.tight_layout()
+
+        output_path = RESULTS_OUTPUT_DIR.joinpath(f"category_region_month_heatmap_{category}.png")
+        plt.savefig(output_path)
+        logger.info(f"Heatmap saved to {output_path}.")
+        plt.show()
+    except Exception as e:
+        logger.error(f"Error generating heatmap for category '{category}': {e}")
+        raise
+
+#Test4
+def visualize_category_sales_by_region_and_month_all(cube_df: pd.DataFrame) -> None:
+    try:
+        df = cube_df.copy()
+        df['sale_date'] = pd.to_datetime(df['sale_date'])
+        df['month'] = df['sale_date'].dt.to_period('M').astype(str)
+
+        grouped = (
+            df.groupby(['category', 'region', 'month'])['sale_amount_sum']
+            .sum()
+            .reset_index()
+            .rename(columns={'sale_amount_sum': 'TotalSales'})
+        )
+
+        plt.figure(figsize=(12, 7))
+        sns.lineplot(
+            data=grouped,
+            x="month",
+            y="TotalSales",
+            hue="category",
+            style="region",
+            markers=True
+        )
+
+        plt.title("Monthly Sales Trends by Category and Region", fontsize=16)
+        plt.xlabel("Month")
+        plt.ylabel("Total Sales (USD)")
+        plt.xticks(rotation=45)
+        plt.tight_layout()
+
+        output_path = RESULTS_OUTPUT_DIR.joinpath("category_region_month_multiline.png")
+        plt.savefig(output_path)
+        logger.info("Multi-category region-month line chart saved.")
+        plt.show()
+    except Exception as e:
+        logger.error("Error visualizing multi-category region sales trends: {e}")
+        raise
+
+def main():
+    try:
+        # Load OLAP cube
+        cube_df = load_olap_cube(CUBED_FILE)
+
+        # --- Analysis ---
+        weekday_sales = analyze_sales_by_weekday(cube_df)
+        region_day_sales = analyze_sales_by_day_and_region(cube_df)
+        region_month_sales = analyze_sales_by_region_and_month(cube_df)
+        category_month_sales = analyze_sales_by_category_and_month(cube_df)
+
+        # Determine the least profitable day
+        least_day = identify_least_profitable_day(weekday_sales)
+        logger.info(f"Least profitable weekday identified: {least_day}")
+
+        # --- Visualizations ---
+        visualize_sales_by_weekday(weekday_sales)
+        visualize_sales_by_day_and_region(region_day_sales)
+        visualize_region_heatmap(region_day_sales)
+        visualize_sales_by_region_and_month(region_month_sales)
+        visualize_sales_by_category_and_month(category_month_sales)
+        visualize_all_categories_sales_by_region_and_month(cube_df)
+
+        # Get all unique categories
+        categories = cube_df['category'].dropna().unique()
+
+        # Run category-specific visualizations
+        for category in categories:
+            logger.info(f"Generating visualizations for category: {category}")
+            cat_region_sales = analyze_sales_by_category_and_region(cube_df, category)
+            cat_region_month_sales = analyze_category_sales_by_region_and_month(cube_df, category)
+
+            visualize_category_sales_by_region(cat_region_sales, category)
+            visualize_category_sales_by_region_and_month(cat_region_month_sales, category)
+            visualize_category_sales_stacked_area(cat_region_month_sales, category)
+            visualize_category_region_month_heatmap(cube_df, category)
+
+        logger.info("All analyses and visualizations completed successfully.")
+
+    except Exception as e:
+        logger.error(f"Main execution failed: {e}")
+
+
+'''
 def main():
     logger.info("Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...")
 
@@ -362,7 +529,7 @@ def main():
 
 
     logger.info("Full analysis and visualization completed.")
-
+'''
 
 if __name__ == "__main__":
     main()
