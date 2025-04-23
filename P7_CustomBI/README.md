@@ -83,12 +83,15 @@ Our next program retrieved our newly cubed data and began performing analysis & 
 In this section, we will outline a series of visualizations that summarize our correlations and trends identified. 
 
 First we see a line chart of the categorical sales over the given months in our data. Immediate obserations are that our "North" region has the lowest 'Total Sales' and the "East" region has the highest. 
+
 ![sales_by_region_over_months](../data/results/sales_by_region_over_months.png)
 
 Next, we take the same constructs of 'Total Sales' per 'Month' rendered individually per each category, "Clothing", "Elecrtonics", & "Sports". We find that "Clothing" & "Electronics" are consistently popular categories with "Sports" providing the least amount of sales. 
+
 ![category_sales_by_region_month_facet](../data/results/category_sales_by_region_month_facet.png)
 
 The next stacked area charts provide category specific analysis:
+
 ![category_sales_stacked_area_Clothing](../data/results/category_sales_stacked_area_Clothing.png)
 
 ![category_sales_stacked_area_Electronics](../data/results/category_sales_stacked_area_Electronics.png)
@@ -96,6 +99,7 @@ The next stacked area charts provide category specific analysis:
 ![category_sales_stacked_area_Sports](../data/results/category_sales_stacked_area_Sports.png)
 
 Our last segment of visualizations provides a monthly heatmap view of sales of a given category per region:
+
 ![category_region_month_heatmap_Clothing](../data/results/category_region_month_heatmap_Clothing.png)
 
 ![category_region_month_heatmap_Electronics](../data/results/category_region_month_heatmap_Electronics.png)
@@ -104,30 +108,17 @@ Our last segment of visualizations provides a monthly heatmap view of sales of a
 
 ### 6. Suggested Business Action
 
-**BLUF:** To sustain growth and increase competitive reach, I suggest a series of quick analyses and activities to support further product development & advertisement criteria. 
+Summary Statement: Our analysis reveals that the "North" region performs very poorly in sales and primarily focuses on the "Sports" and "Clothing" categories. "Electronics" is our most expensive category and has honorable sales in all regions except "North". Additionally, "Clothing" has fairly stable sales in all regions but with a lower price point. 
 
-1) All products should be analyzed for profit ratio and investigated for: 
-   1) What is an acceptable discount to run?
-   2) What are it's competitive brands and options?
-   
-2) Advertising analysis should be done across the product types to understand customer demographics and shopping platforms.
-    1) Where are customers purchasing our products from?
-    2) What advertisements are currently being ran and their costs?
-
-3) Following the advertisement analysis, that data should be complimented with investigating the demographic trends per customer region. 
-
-4) Once these data pillars are established, the company should commission the development of Machine Learning functions to perform predictive analytics of the criteria above, over given out-years and fiscal quarters. 
-
-5) Lastly, the team developing these constructs should be tasked with finalizing their product in a web-based dashboard  where stakeholders are given convenient access and can query their own strategic interests. 
+Suggestions:
+1) It may be worth analyzing what type of advertisement is being done or may be needed to attract more sales from the "North" region. 
+2) Complimentary to the above, how can we secure greater "Electronics" sales in the "North" region?
+3) It may also be valuable to investigate if any discounts for "Clothing" & "Electronics" may help boost great regional coverage. 
+4) Lastly, further analysis is recommended on the correlation of events in the months of low sales. Are there regional activities during that time that affect sales or detract buyers? 
 
 ### 7. Challenges
 
-Overall, this project went fairly smoothly. I needed to adjsut some of my column names and add additional functions to reference multiple tables in the data warehouse but otherwise everything worked without a hitch. 
-
-Thank you for taking the time to review this project. Should you have any questions, collaborative interests, or inquiries, please connect with me.
-
-Cheers,
-
--Derek Fintel
+The code for this project utilized prior activities as a springboard for development. We added a substantial grouping of functions and visualizations to our Codeset #2. This took a bit of polishing to organize which ones were valuable. The functional aspects of the project ran smooth otherwise. 
 
 ### Ethical Considerations
+I think the aperature of this analysis was fairly ethical but can see where further analyses could grey that line. For instance, if we further added customer "demographics" to the regional data. We may realize socioeconomic diversty and inequalities. If these are true, this may further risk the impact with what types of advertisement and incentives are be focused on those areas. At the same time, knowing a bit more about what potential exists in each region could help posture ethical improvements just the same. 
