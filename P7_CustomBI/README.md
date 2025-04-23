@@ -10,8 +10,8 @@ This README covers an overiew of our final P7 Custom Business Intelligence proje
 
 For this project we wanted to access specific tables within our 'smart_sales.db' to generate business insights pertinent to supporting potential advertising and product development strategies. 
 
-In this project, we primarily want to:
-- Understand the correlations of product types and their sales in respective regions. 
+In this project, we primarily wanted to:
+- Understand the correlations and trends of product types and their sales in respective regions. 
   
 Previous analyses leveraged in our code:
 - What are the total sales per day of the week?
@@ -48,7 +48,9 @@ See below for a list of imports:
 
 **Codeset #1:** *olap_cubing_customer.py*
 
-To support our investigation, we had to first retrieve and cube our desired dimensions. We started by ingesting data from both the "Sales" and "Customer" tables. We then selected specific columns for cubing (referenced above), and applide some time-based dimensions to them. Our code then wrote this compilation to our data folder via CSV. 
+To support our investigation, we had to first retrieve and cube our desired dimensions. We started by ingesting data from the "Sales", "Product", and "Customer" tables. We then selected specific columns for cubing (referenced above), and applide some time-based dimensions to them. Our code then wrote this compilation to our data folder via CSV.
+
+**CSV:** C:\Projects\smart-store-derekfintel\data\olap_cubing_outputs\multidimensional_olap_cube.csv
 
 **Example:**
 
@@ -68,29 +70,32 @@ Our next program retrieved our newly cubed data and began performing analysis & 
 
 1. __main__:main:172 - Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...
 2. __main__:load_olap_cube:18 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
-3. __main__:analyze_sales_by_weekday:32 - Sales aggregated by DayOfWeek successfully.
-4. __main__:identify_least_profitable_day:57 - Least profitable day: Friday with revenue $8617.76.
-5. __main__:main:178 - Least profitable day: Friday
-6. __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
+3. __main__:visualize_sales_by_day_and_region:300 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+4. __main__:visualize_sales_by_category_and_month:279 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+5. __main__:visualize_all_categories_sales_by_region_and_month:355 - Faceted category-region-month sales chart saved to data\results\category_sales_by_region_month_facet.png.
+6. __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Clothing' successfully aggregated.
+7. __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Clothing.png.
+8. __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Sports' successfully aggregated.
+9. __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Sports.png.
 
 ### 5. Results
 
-For our results, will walk through our summary findings and detail insights rendered from our visualizations. 
+In this section, we will outline a series of visualizations that summarize our correlations and trends identified. 
 
-First, we find that Mondays, Wednesdays, and Thursdays have the strongest sales per week. 
-
-![sales_by_category_over_months_scatter](../data/results/sales_by_category_over_months_scatter.png)
-
-![category_sales_by_region_month_facet](../data/results/category_sales_by_region_month_facet.png)
-
+First we see a line chart of the categorical sales over the given months in our data. Immediate obserations are that our "North" region has the lowest 'Total Sales' and the "East" region has the highest. 
 ![sales_by_region_over_months](../data/results/sales_by_region_over_months.png)
 
+Next, we take the same constructs of 'Total Sales' per 'Month' rendered individually per each category, "Clothing", "Elecrtonics", & "Sports". We find that "Clothing" & "Electronics" are consistently popular categories with "Sports" providing the least amount of sales. 
+![category_sales_by_region_month_facet](../data/results/category_sales_by_region_month_facet.png)
+
+The next stacked area charts provide category specific analysis:
 ![category_sales_stacked_area_Clothing](../data/results/category_sales_stacked_area_Clothing.png)
 
 ![category_sales_stacked_area_Electronics](../data/results/category_sales_stacked_area_Electronics.png)
 
 ![category_sales_stacked_area_Sports](../data/results/category_sales_stacked_area_Sports.png)
 
+Our last segment of visualizations provides a monthly heatmap view of sales of a given category per region:
 ![category_region_month_heatmap_Clothing](../data/results/category_region_month_heatmap_Clothing.png)
 
 ![category_region_month_heatmap_Electronics](../data/results/category_region_month_heatmap_Electronics.png)
