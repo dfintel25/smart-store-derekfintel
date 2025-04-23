@@ -492,44 +492,5 @@ def main():
         logger.error(f"Main execution failed: {e}")
 
 
-'''
-def main():
-    logger.info("Starting SALES_LOW_REVENUE_DAYOFWEEK analysis...")
-
-    cube_df = load_olap_cube(CUBED_FILE)
-
-    sales_by_weekday = analyze_sales_by_weekday(cube_df)
-    least_profitable_day = identify_least_profitable_day(sales_by_weekday)
-    logger.info(f"Least profitable day: {least_profitable_day}")
-    visualize_sales_by_weekday(sales_by_weekday)
-
-    # Analysis and visualizations
-    region_day_sales = analyze_sales_by_day_and_region(cube_df)
-    visualize_sales_by_day_and_region(region_day_sales)
-    visualize_region_heatmap(region_day_sales)
-
-    # Analyze sales by region and month
-    region_month_sales = analyze_sales_by_region_and_month(cube_df)
-
-    # Visualize sales by region and month
-    visualize_sales_by_region_and_month(region_month_sales)
-
-    # Analyze and visualize category-month sales
-    category_month_sales = analyze_sales_by_category_and_month(cube_df)
-    visualize_sales_by_category_and_month(category_month_sales)
-
-    # Category-Region Sales Analysis
-    target_category = "Electronics"  # Change this as needed or make it a CLI arg
-    category_region_sales = analyze_sales_by_category_and_region(cube_df, target_category)
-    visualize_category_sales_by_region(category_region_sales, target_category)
-
-    # New: Category-Region-Month Trend
-    category_region_month_sales = analyze_category_sales_by_region_and_month(cube_df, target_category)
-    visualize_category_sales_by_region_and_month(category_region_month_sales, target_category)
-
-
-    logger.info("Full analysis and visualization completed.")
-'''
-
 if __name__ == "__main__":
     main()
