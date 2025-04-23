@@ -83,9 +83,9 @@ First, we find that Mondays, Wednesdays, and Thursdays have the strongest sales 
 
 ![category_sales_stacked_area_Clothing](../data/results/category_sales_stacked_area_Clothing.png)
 
-![category_sales_by_region_monthly_Electronics](../data/results/category_sales_by_region_monthly_Electronics.png)
+![category_sales_stacked_area_Electronics](../data/results/category_sales_stacked_area_Electronics.png)
 
-![category_sales_by_region_monthly_Sports](../data/results/category_sales_by_region_monthly_Sports.png)
+![categorey_sales_stacked_area_Sports](../data/results/category_sales_stacked_area_Sports.png)
 
 ![category_region_month_heatmap_Clothing](../data/results/category_region_month_heatmap_Clothing.png)
 
