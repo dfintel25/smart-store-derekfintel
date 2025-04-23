@@ -1,22 +1,26 @@
-# OLAP Analysis
+# P7 Custom BI Project
 #### Developer: Derek Fintel
 #### Contact: s542635@youremail; 555-abc-1234
+#### Date: 04/22/2025
 
 ### Project Intro
-This README covers an overiew of a brief OLAP (Online Analytical Processing) project. 
+This README covers an overiew of our final P7 Custom Business Intelligence project.
 
 ### 1. The Business Goal
 
 For this project we wanted to access specific tables within our 'smart_sales.db' to generate business insights pertinent to supporting potential advertising and product development strategies. 
 
-In particular, we sought to leverage our tools to generate understandings of:
+In this project, we primarily want to:
+- Understand the correlations of product types and their sales in respective regions. 
+  
+Previous analyses leveraged in our code:
 - What are the total sales per day of the week?
 - What are the total sales per day PER a given region?
 - What are the total sales per day of a given product?
 
 ### 2. Data Source
 
-We used two tables from our data warehouse, "Sales" and "Customers".
+We used all available tables from our data warehouse, "Sales", "Product", and "Customers".
 
 From previous work we have established a data warehouse ('smart_sales.db') that has been built by intaking raw business data via CSV and performing various Python & SQL scripts that prep, scrub, and publish data. These programs were part of an ETL process that cleaned and transformed our datas, even to their table relationships and columns names. 
 
@@ -69,45 +73,25 @@ Our next program retrieved our newly cubed data and began performing analysis & 
 5. __main__:main:178 - Least profitable day: Friday
 6. __main__:visualize_sales_by_weekday:82 - Visualization saved to data\results\sales_by_day_of_week.png.
 
-**Codeset #3:** *olap_goal_top_product_by_day.py*
-
-Our last major codeset utilized a similar functional set as Codeset #2 but focused on grouping the values within our cubes and sorting them by "product_id". 
-
-**Example:**
-
-1. __main__:main:83 - Starting SALES_TOP_PRODUCT_BY_WEEKDAY analysis...
-2. __main__:load_olap_cube:21 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
-3. __main__:analyze_top_product_by_weekday:37 - Top products identified for each day of the week.
-    DayOfWeek  product_id  TotalSales
-0      Friday         101     6344.96
-6      Monday         101    19828.00
-11   Saturday         101    11103.68
-18     Sunday         101     7931.20
-22   Thursday         101    20621.12
-29    Tuesday         101     6344.96
-35  Wednesday         101    16655.52
-| __main__:visualize_sales_by_weekday_and_product:74 - Stacked bar chart saved to data\results\sales_by_day_and_product.png.
-
 ### 5. Results
 
 For our results, will walk through our summary findings and detail insights rendered from our visualizations. 
 
 First, we find that Mondays, Wednesdays, and Thursdays have the strongest sales per week. 
 
-![sales_by_day_of_week](image-2.png)
+![sales_by_category_over_months_scatter](../data/results/sales_by_category_over_months_scatter.png)
 
-Next, we see that Product "101" has consistent and substantial sales to that of others. Products "104" and "107" trail but are still significantly less than "101".
+![category_sales_stacked_area_Clothing](../data/results/category_sales_stacked_area_Clothing.png)
 
-![sales_by_day_and_product](image.png)
+![category_sales_by_region_monthly_Electronics](../data/results/category_sales_by_region_monthly_Electronics.png)
 
-Our region analysis provided some interesting observations where "East" was consistently strong followed by "South", "West", and "North" with the least. 
+![category_sales_by_region_monthly_Sports](../data/results/category_sales_by_region_monthly_Sports.png)
 
-![sales_by_day_and_region_stacked](image-1.png)
+![category_region_month_heatmap_Clothing](../data/results/category_region_month_heatmap_Clothing.png)
 
-Our last visual gives a heatmap of sales per region and day of the week. It provides a nice summary view where we see that sales are highest in our "East" region on Thursday's and seconded by "South" on Monday's.
+![category_region_month_heatmap_Electronics](../data/results/category_region_month_heatmap_Electronics.png)
 
-![sales_heatmap_by_region_and_day](image-3.png)
-
+![category_region_month_heatmap_Sports](../data/results/category_region_month_heatmap_Sports.png)
 
 ### 6. Suggested Business Action
 
@@ -136,3 +120,5 @@ Thank you for taking the time to review this project. Should you have any questi
 Cheers,
 
 -Derek Fintel
+
+### Ethical Considerations

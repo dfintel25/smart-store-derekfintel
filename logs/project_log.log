@@ -1881,3 +1881,38 @@ Name: TotalSales, dtype: float64
 2025-04-22 19:36:15.807 | INFO     | __main__:visualize_category_sales_stacked_area:377 - Stacked area chart saved to data\results\category_sales_stacked_area_Electronics.png.
 2025-04-22 19:36:17.175 | INFO     | __main__:visualize_category_region_month_heatmap:408 - Heatmap saved to data\results\category_region_month_heatmap_Electronics.png.
 2025-04-22 19:36:18.356 | INFO     | __main__:main:489 - All analyses and visualizations completed successfully.
+2025-04-22 20:08:46.750 | INFO     | __main__:load_olap_cube:24 - OLAP cube data successfully loaded from data\olap_cubing_outputs\multidimensional_olap_cube.csv.
+2025-04-22 20:08:46.752 | INFO     | __main__:analyze_sales_by_weekday:38 - Sales aggregated by DayOfWeek successfully.
+2025-04-22 20:08:46.754 | INFO     | __main__:analyze_sales_by_day_and_region:53 - Sales aggregated by DayOfWeek and Region successfully.
+2025-04-22 20:08:46.759 | INFO     | __main__:analyze_sales_by_region_and_month:90 - Sales by region and month successfully aggregated.
+2025-04-22 20:08:46.762 | INFO     | __main__:analyze_sales_by_category_and_month:128 - Sales by category and month successfully aggregated.
+2025-04-22 20:08:46.763 | INFO     | __main__:identify_least_profitable_day:138 - Least profitable day: Friday with revenue $8617.76.
+2025-04-22 20:08:46.763 | INFO     | __main__:main:465 - Least profitable weekday identified: Friday
+2025-04-22 20:08:47.034 | INFO     | __main__:visualize_sales_by_weekday:226 - Visualization with trendline saved to data\results\sales_by_day_of_week_with_trendline.png.
+2025-04-22 20:08:49.423 | INFO     | __main__:visualize_sales_by_day_and_region:300 - Stacked region-by-day chart saved to data\results\sales_by_day_and_region_stacked.png.
+2025-04-22 20:08:50.933 | INFO     | __main__:visualize_region_heatmap:322 - Heatmap saved to data\results\sales_heatmap_by_region_and_day.png.
+2025-04-22 20:08:52.364 | INFO     | __main__:visualize_sales_by_region_and_month:188 - Sales by region over months chart saved to data\results\sales_by_region_over_months.png.
+2025-04-22 20:08:54.614 | INFO     | __main__:visualize_sales_by_category_and_month:279 - Category-over-months scatterplot saved to data\results\sales_by_category_over_months_scatter.png.
+2025-04-22 20:08:56.846 | INFO     | __main__:visualize_all_categories_sales_by_region_and_month:355 - Faceted category-region-month sales chart saved to data\results\category_sales_by_region_month_facet.png.
+2025-04-22 20:08:58.597 | INFO     | __main__:main:480 - Generating visualizations for category: Clothing
+2025-04-22 20:08:58.605 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Clothing' successfully aggregated.
+2025-04-22 20:08:58.615 | INFO     | __main__:analyze_category_sales_by_region_and_month:109 - Monthly sales for category 'Clothing' by region successfully aggregated.
+2025-04-22 20:08:58.816 | INFO     | __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Clothing.png.
+2025-04-22 20:09:00.146 | INFO     | __main__:visualize_category_sales_by_region_and_month:246 - Category sales trend chart by region and month saved to data\results\category_sales_by_region_monthly_Clothing.png.
+2025-04-22 20:09:01.412 | INFO     | __main__:visualize_category_sales_stacked_area:377 - Stacked area chart saved to data\results\category_sales_stacked_area_Clothing.png.
+2025-04-22 20:09:03.111 | INFO     | __main__:visualize_category_region_month_heatmap:408 - Heatmap saved to data\results\category_region_month_heatmap_Clothing.png.
+2025-04-22 20:09:04.066 | INFO     | __main__:main:480 - Generating visualizations for category: Sports
+2025-04-22 20:09:04.072 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Sports' successfully aggregated.
+2025-04-22 20:09:04.079 | INFO     | __main__:analyze_category_sales_by_region_and_month:109 - Monthly sales for category 'Sports' by region successfully aggregated.
+2025-04-22 20:09:04.311 | INFO     | __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Sports.png.
+2025-04-22 20:09:05.795 | INFO     | __main__:visualize_category_sales_by_region_and_month:246 - Category sales trend chart by region and month saved to data\results\category_sales_by_region_monthly_Sports.png.
+2025-04-22 20:09:07.207 | INFO     | __main__:visualize_category_sales_stacked_area:377 - Stacked area chart saved to data\results\category_sales_stacked_area_Sports.png.
+2025-04-22 20:09:08.727 | INFO     | __main__:visualize_category_region_month_heatmap:408 - Heatmap saved to data\results\category_region_month_heatmap_Sports.png.
+2025-04-22 20:09:10.505 | INFO     | __main__:main:480 - Generating visualizations for category: Electronics
+2025-04-22 20:09:10.522 | INFO     | __main__:analyze_sales_by_category_and_region:68 - Sales by region for category 'Electronics' successfully aggregated.
+2025-04-22 20:09:10.530 | INFO     | __main__:analyze_category_sales_by_region_and_month:109 - Monthly sales for category 'Electronics' by region successfully aggregated.
+2025-04-22 20:09:10.730 | INFO     | __main__:visualize_category_sales_by_region:163 - Category-by-region chart saved to data\results\sales_by_region_for_category_Electronics.png.
+2025-04-22 20:09:12.221 | INFO     | __main__:visualize_category_sales_by_region_and_month:246 - Category sales trend chart by region and month saved to data\results\category_sales_by_region_monthly_Electronics.png.
+2025-04-22 20:09:13.983 | INFO     | __main__:visualize_category_sales_stacked_area:377 - Stacked area chart saved to data\results\category_sales_stacked_area_Electronics.png.
+2025-04-22 20:09:15.533 | INFO     | __main__:visualize_category_region_month_heatmap:408 - Heatmap saved to data\results\category_region_month_heatmap_Electronics.png.
+2025-04-22 20:09:16.298 | INFO     | __main__:main:489 - All analyses and visualizations completed successfully.
